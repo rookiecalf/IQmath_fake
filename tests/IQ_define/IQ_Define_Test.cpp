@@ -21,7 +21,7 @@
 
 extern "C"
 {
-	#include "IQmathlib.h"
+	#include "IQmathLib.h"
 }
 
 TEST_GROUP(IQ_define_test)
