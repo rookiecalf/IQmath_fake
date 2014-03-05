@@ -1,345 +1,335 @@
-lib_libCppUTestExt_a-MockFailure.o lib_libCppUTestExt_a-MockFailure.o:  \
- src/CppUTestExt/MockFailure.cpp \
-  ././include/CppUTest/MemoryLeakDetectorMallocMacros.h \
-  ././include/CppUTest/CppUTestConfig.h ./config.h \
-  ././include/CppUTest/StandardCLibrary.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stddef.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cstdlib \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/c++config.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/os_defines.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cstddef \
-  /usr/include/stdlib.h /usr/include/machine/ieeefp.h \
-  /usr/include/_ansi.h /usr/include/newlib.h /usr/include/sys/config.h \
-  /usr/include/sys/features.h /usr/include/cygwin/config.h \
-  /usr/include/sys/reent.h /usr/include/_ansi.h /usr/include/sys/_types.h \
-  /usr/include/machine/_types.h /usr/include/machine/_default_types.h \
-  /usr/include/sys/lock.h /usr/include/machine/stdlib.h \
-  /usr/include/alloca.h /usr/include/cygwin/stdlib.h \
-  /usr/include/cygwin/wait.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stdarg.h \
-  ././include/CppUTest/MemoryLeakDetectorNewMacros.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/new \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/exception \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/memory \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_algobase.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cstring \
-  /usr/include/string.h /usr/include/sys/cdefs.h /usr/include/stdint.h \
-  /usr/include/sys/string.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/climits \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/limits.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/syslimits.h \
-  /usr/include/limits.h /usr/include/features.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/iosfwd \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/c++locale.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/clocale \
-  /usr/include/locale.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cstdio \
-  /usr/include/stdio.h /usr/include/sys/types.h \
-  /usr/include/machine/types.h /usr/include/cygwin/types.h \
-  /usr/include/endian.h /usr/include/bits/endian.h \
-  /usr/include/byteswap.h /usr/include/sys/sysmacros.h \
-  /usr/include/sys/stdio.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/c++io.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/gthr.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/signal.h /usr/include/sys/signal.h \
-  /usr/include/cygwin/signal.h /usr/include/sched.h \
-  /usr/include/sys/sched.h /usr/include/time.h \
-  /usr/include/machine/time.h /usr/include/cygwin/time.h \
-  /usr/include/unistd.h /usr/include/sys/unistd.h /usr/include/getopt.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cctype \
-  /usr/include/ctype.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stringfwd.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/postypes.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cwchar \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/ctime \
-  /usr/include/wchar.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/functexcept.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/exception_defines.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_pair.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/type_traits.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_iterator_base_types.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_iterator_base_funcs.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/concept_check.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_iterator.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/debug/debug.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cassert \
-  /usr/include/assert.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/allocator.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/c++allocator.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/ext/new_allocator.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_construct.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_uninitialized.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_raw_storage_iter.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/limits \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/string \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/char_traits.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_function.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/basic_string.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/atomicity.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/atomic_word.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/algorithm \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_algo.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_heap.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_tempbuf.h \
-  /usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/basic_string.tcc \
-  ./include/CppUTest/TestHarness.h ./include/CppUTest/CppUTestConfig.h \
-  ./include/CppUTest/Utest.h ./include/CppUTest/SimpleString.h \
-  ./include/CppUTest/StandardCLibrary.h ./include/CppUTest/UtestMacros.h \
-  ./include/CppUTest/TestResult.h ./include/CppUTest/TestFailure.h \
-  ./include/CppUTest/TestPlugin.h \
-  ./include/CppUTest/MemoryLeakWarningPlugin.h \
-  ./include/CppUTest/MemoryLeakDetectorNewMacros.h \
-  ./include/CppUTestExt/MockFailure.h ./include/CppUTest/TestFailure.h \
-  ./include/CppUTestExt/MockExpectedFunctionCall.h \
-  ./include/CppUTestExt/MockFunctionCall.h \
-  ./include/CppUTestExt/MockNamedValue.h \
-  ./include/CppUTestExt/MockExpectedFunctionsList.h
+lib_libCppUTestExt_a-MockFailure.o: src/CppUTestExt/MockFailure.cpp \
+ include/CppUTest/MemoryLeakDetectorMallocMacros.h \
+ include/CppUTest/CppUTestConfig.h config.h \
+ include/CppUTest/StandardCLibrary.h \
+ /usr/lib/gcc/i686-linux-gnu/4.6/include/stddef.h \
+ /usr/include/c++/4.6/cstdlib \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/c++config.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/os_defines.h \
+ /usr/include/features.h /usr/include/i386-linux-gnu/bits/predefs.h \
+ /usr/include/i386-linux-gnu/sys/cdefs.h \
+ /usr/include/i386-linux-gnu/bits/wordsize.h \
+ /usr/include/i386-linux-gnu/gnu/stubs.h \
+ /usr/include/i386-linux-gnu/gnu/stubs-32.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/cpu_defines.h \
+ /usr/include/stdlib.h /usr/include/i386-linux-gnu/bits/waitflags.h \
+ /usr/include/i386-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/i386-linux-gnu/bits/endian.h \
+ /usr/include/i386-linux-gnu/bits/byteswap.h /usr/include/xlocale.h \
+ /usr/include/i386-linux-gnu/sys/types.h \
+ /usr/include/i386-linux-gnu/bits/types.h \
+ /usr/include/i386-linux-gnu/bits/typesizes.h /usr/include/time.h \
+ /usr/include/i386-linux-gnu/sys/select.h \
+ /usr/include/i386-linux-gnu/bits/select.h \
+ /usr/include/i386-linux-gnu/bits/sigset.h \
+ /usr/include/i386-linux-gnu/bits/time.h \
+ /usr/include/i386-linux-gnu/bits/select2.h \
+ /usr/include/i386-linux-gnu/sys/sysmacros.h \
+ /usr/include/i386-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/i386-linux-gnu/bits/stdlib.h \
+ /usr/lib/gcc/i686-linux-gnu/4.6/include/stdarg.h \
+ include/CppUTest/MemoryLeakDetectorNewMacros.h /usr/include/c++/4.6/new \
+ /usr/include/c++/4.6/exception /usr/include/c++/4.6/memory \
+ /usr/include/c++/4.6/bits/stl_algobase.h \
+ /usr/include/c++/4.6/bits/functexcept.h \
+ /usr/include/c++/4.6/bits/exception_defines.h \
+ /usr/include/c++/4.6/bits/cpp_type_traits.h \
+ /usr/include/c++/4.6/ext/type_traits.h \
+ /usr/include/c++/4.6/ext/numeric_traits.h \
+ /usr/include/c++/4.6/bits/stl_pair.h /usr/include/c++/4.6/bits/move.h \
+ /usr/include/c++/4.6/bits/concept_check.h \
+ /usr/include/c++/4.6/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.6/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.6/bits/stl_iterator.h \
+ /usr/include/c++/4.6/debug/debug.h /usr/include/c++/4.6/bits/allocator.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/c++allocator.h \
+ /usr/include/c++/4.6/ext/new_allocator.h \
+ /usr/include/c++/4.6/bits/stl_construct.h \
+ /usr/include/c++/4.6/bits/stl_uninitialized.h \
+ /usr/include/c++/4.6/bits/stl_tempbuf.h \
+ /usr/include/c++/4.6/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/4.6/backward/auto_ptr.h /usr/include/c++/4.6/string \
+ /usr/include/c++/4.6/bits/stringfwd.h \
+ /usr/include/c++/4.6/bits/char_traits.h \
+ /usr/include/c++/4.6/bits/postypes.h /usr/include/c++/4.6/cwchar \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/include/i386-linux-gnu/bits/wchar.h \
+ /usr/include/i386-linux-gnu/bits/wchar2.h \
+ /usr/include/c++/4.6/bits/localefwd.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/c++locale.h \
+ /usr/include/c++/4.6/clocale /usr/include/locale.h \
+ /usr/include/i386-linux-gnu/bits/locale.h /usr/include/c++/4.6/iosfwd \
+ /usr/include/c++/4.6/cctype /usr/include/ctype.h \
+ /usr/include/c++/4.6/bits/ostream_insert.h \
+ /usr/include/c++/4.6/bits/cxxabi_forced.h \
+ /usr/include/c++/4.6/bits/stl_function.h \
+ /usr/include/c++/4.6/backward/binders.h \
+ /usr/include/c++/4.6/bits/range_access.h \
+ /usr/include/c++/4.6/bits/basic_string.h \
+ /usr/include/c++/4.6/ext/atomicity.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/gthr.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/i386-linux-gnu/bits/sched.h \
+ /usr/include/i386-linux-gnu/bits/timex.h \
+ /usr/include/i386-linux-gnu/bits/setjmp.h /usr/include/unistd.h \
+ /usr/include/i386-linux-gnu/bits/posix_opt.h \
+ /usr/include/i386-linux-gnu/bits/environments.h \
+ /usr/include/i386-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/i386-linux-gnu/bits/unistd.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/atomic_word.h \
+ /usr/include/c++/4.6/initializer_list \
+ /usr/include/c++/4.6/bits/basic_string.tcc \
+ include/CppUTest/TestHarness.h include/CppUTest/CppUTestConfig.h \
+ include/CppUTest/Utest.h include/CppUTest/SimpleString.h \
+ include/CppUTest/StandardCLibrary.h \
+ /usr/lib/gcc/i686-linux-gnu/4.6/include/stdint.h /usr/include/stdint.h \
+ include/CppUTest/UtestMacros.h include/CppUTest/TestResult.h \
+ include/CppUTest/TestFailure.h include/CppUTest/TestPlugin.h \
+ include/CppUTest/MemoryLeakWarningPlugin.h \
+ include/CppUTest/MemoryLeakDetectorNewMacros.h \
+ include/CppUTestExt/MockFailure.h include/CppUTest/TestFailure.h \
+ include/CppUTestExt/MockExpectedFunctionCall.h \
+ include/CppUTestExt/MockFunctionCall.h \
+ include/CppUTestExt/MockNamedValue.h \
+ include/CppUTestExt/MockExpectedFunctionsList.h
 
-././include/CppUTest/MemoryLeakDetectorMallocMacros.h:
+include/CppUTest/MemoryLeakDetectorMallocMacros.h:
 
-././include/CppUTest/CppUTestConfig.h:
+include/CppUTest/CppUTestConfig.h:
 
-./config.h:
+config.h:
 
-././include/CppUTest/StandardCLibrary.h:
+include/CppUTest/StandardCLibrary.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stddef.h:
+/usr/lib/gcc/i686-linux-gnu/4.6/include/stddef.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cstdlib:
+/usr/include/c++/4.6/cstdlib:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/c++config.h:
+/usr/include/c++/4.6/i686-linux-gnu/./bits/c++config.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/os_defines.h:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cstddef:
-
-/usr/include/stdlib.h:
-
-/usr/include/machine/ieeefp.h:
-
-/usr/include/_ansi.h:
-
-/usr/include/newlib.h:
-
-/usr/include/sys/config.h:
-
-/usr/include/sys/features.h:
-
-/usr/include/cygwin/config.h:
-
-/usr/include/sys/reent.h:
-
-/usr/include/_ansi.h:
-
-/usr/include/sys/_types.h:
-
-/usr/include/machine/_types.h:
-
-/usr/include/machine/_default_types.h:
-
-/usr/include/sys/lock.h:
-
-/usr/include/machine/stdlib.h:
-
-/usr/include/alloca.h:
-
-/usr/include/cygwin/stdlib.h:
-
-/usr/include/cygwin/wait.h:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stdarg.h:
-
-././include/CppUTest/MemoryLeakDetectorNewMacros.h:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/new:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/exception:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/memory:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_algobase.h:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cstring:
-
-/usr/include/string.h:
-
-/usr/include/sys/cdefs.h:
-
-/usr/include/stdint.h:
-
-/usr/include/sys/string.h:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/climits:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/limits.h:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/syslimits.h:
-
-/usr/include/limits.h:
+/usr/include/c++/4.6/i686-linux-gnu/./bits/os_defines.h:
 
 /usr/include/features.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/iosfwd:
+/usr/include/i386-linux-gnu/bits/predefs.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/c++locale.h:
+/usr/include/i386-linux-gnu/sys/cdefs.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/clocale:
+/usr/include/i386-linux-gnu/bits/wordsize.h:
 
-/usr/include/locale.h:
+/usr/include/i386-linux-gnu/gnu/stubs.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cstdio:
+/usr/include/i386-linux-gnu/gnu/stubs-32.h:
 
-/usr/include/stdio.h:
+/usr/include/c++/4.6/i686-linux-gnu/./bits/cpu_defines.h:
 
-/usr/include/sys/types.h:
+/usr/include/stdlib.h:
 
-/usr/include/machine/types.h:
+/usr/include/i386-linux-gnu/bits/waitflags.h:
 
-/usr/include/cygwin/types.h:
+/usr/include/i386-linux-gnu/bits/waitstatus.h:
 
 /usr/include/endian.h:
 
-/usr/include/bits/endian.h:
+/usr/include/i386-linux-gnu/bits/endian.h:
 
-/usr/include/byteswap.h:
+/usr/include/i386-linux-gnu/bits/byteswap.h:
 
-/usr/include/sys/sysmacros.h:
+/usr/include/xlocale.h:
 
-/usr/include/sys/stdio.h:
+/usr/include/i386-linux-gnu/sys/types.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/c++io.h:
+/usr/include/i386-linux-gnu/bits/types.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/gthr.h:
-
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/gthr-default.h:
-
-/usr/include/pthread.h:
-
-/usr/include/signal.h:
-
-/usr/include/sys/signal.h:
-
-/usr/include/cygwin/signal.h:
-
-/usr/include/sched.h:
-
-/usr/include/sys/sched.h:
+/usr/include/i386-linux-gnu/bits/typesizes.h:
 
 /usr/include/time.h:
 
-/usr/include/machine/time.h:
+/usr/include/i386-linux-gnu/sys/select.h:
 
-/usr/include/cygwin/time.h:
+/usr/include/i386-linux-gnu/bits/select.h:
 
-/usr/include/unistd.h:
+/usr/include/i386-linux-gnu/bits/sigset.h:
 
-/usr/include/sys/unistd.h:
+/usr/include/i386-linux-gnu/bits/time.h:
 
-/usr/include/getopt.h:
+/usr/include/i386-linux-gnu/bits/select2.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cctype:
+/usr/include/i386-linux-gnu/sys/sysmacros.h:
 
-/usr/include/ctype.h:
+/usr/include/i386-linux-gnu/bits/pthreadtypes.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stringfwd.h:
+/usr/include/alloca.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/postypes.h:
+/usr/include/i386-linux-gnu/bits/stdlib.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cwchar:
+/usr/lib/gcc/i686-linux-gnu/4.6/include/stdarg.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/ctime:
+include/CppUTest/MemoryLeakDetectorNewMacros.h:
+
+/usr/include/c++/4.6/new:
+
+/usr/include/c++/4.6/exception:
+
+/usr/include/c++/4.6/memory:
+
+/usr/include/c++/4.6/bits/stl_algobase.h:
+
+/usr/include/c++/4.6/bits/functexcept.h:
+
+/usr/include/c++/4.6/bits/exception_defines.h:
+
+/usr/include/c++/4.6/bits/cpp_type_traits.h:
+
+/usr/include/c++/4.6/ext/type_traits.h:
+
+/usr/include/c++/4.6/ext/numeric_traits.h:
+
+/usr/include/c++/4.6/bits/stl_pair.h:
+
+/usr/include/c++/4.6/bits/move.h:
+
+/usr/include/c++/4.6/bits/concept_check.h:
+
+/usr/include/c++/4.6/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/4.6/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/4.6/bits/stl_iterator.h:
+
+/usr/include/c++/4.6/debug/debug.h:
+
+/usr/include/c++/4.6/bits/allocator.h:
+
+/usr/include/c++/4.6/i686-linux-gnu/./bits/c++allocator.h:
+
+/usr/include/c++/4.6/ext/new_allocator.h:
+
+/usr/include/c++/4.6/bits/stl_construct.h:
+
+/usr/include/c++/4.6/bits/stl_uninitialized.h:
+
+/usr/include/c++/4.6/bits/stl_tempbuf.h:
+
+/usr/include/c++/4.6/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/4.6/backward/auto_ptr.h:
+
+/usr/include/c++/4.6/string:
+
+/usr/include/c++/4.6/bits/stringfwd.h:
+
+/usr/include/c++/4.6/bits/char_traits.h:
+
+/usr/include/c++/4.6/bits/postypes.h:
+
+/usr/include/c++/4.6/cwchar:
 
 /usr/include/wchar.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/functexcept.h:
+/usr/include/stdio.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/exception_defines.h:
+/usr/include/i386-linux-gnu/bits/wchar.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_pair.h:
+/usr/include/i386-linux-gnu/bits/wchar2.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/type_traits.h:
+/usr/include/c++/4.6/bits/localefwd.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_iterator_base_types.h:
+/usr/include/c++/4.6/i686-linux-gnu/./bits/c++locale.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_iterator_base_funcs.h:
+/usr/include/c++/4.6/clocale:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/concept_check.h:
+/usr/include/locale.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_iterator.h:
+/usr/include/i386-linux-gnu/bits/locale.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/debug/debug.h:
+/usr/include/c++/4.6/iosfwd:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/cassert:
+/usr/include/c++/4.6/cctype:
 
-/usr/include/assert.h:
+/usr/include/ctype.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/allocator.h:
+/usr/include/c++/4.6/bits/ostream_insert.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/c++allocator.h:
+/usr/include/c++/4.6/bits/cxxabi_forced.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/ext/new_allocator.h:
+/usr/include/c++/4.6/bits/stl_function.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_construct.h:
+/usr/include/c++/4.6/backward/binders.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_uninitialized.h:
+/usr/include/c++/4.6/bits/range_access.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_raw_storage_iter.h:
+/usr/include/c++/4.6/bits/basic_string.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/limits:
+/usr/include/c++/4.6/ext/atomicity.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/string:
+/usr/include/c++/4.6/i686-linux-gnu/./bits/gthr.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/char_traits.h:
+/usr/include/c++/4.6/i686-linux-gnu/./bits/gthr-default.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_function.h:
+/usr/include/pthread.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/basic_string.h:
+/usr/include/sched.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/atomicity.h:
+/usr/include/i386-linux-gnu/bits/sched.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/i686-pc-cygwin/bits/atomic_word.h:
+/usr/include/i386-linux-gnu/bits/timex.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/algorithm:
+/usr/include/i386-linux-gnu/bits/setjmp.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_algo.h:
+/usr/include/unistd.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_heap.h:
+/usr/include/i386-linux-gnu/bits/posix_opt.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/stl_tempbuf.h:
+/usr/include/i386-linux-gnu/bits/environments.h:
 
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/c++/bits/basic_string.tcc:
+/usr/include/i386-linux-gnu/bits/confname.h:
 
-./include/CppUTest/TestHarness.h:
+/usr/include/getopt.h:
 
-./include/CppUTest/CppUTestConfig.h:
+/usr/include/i386-linux-gnu/bits/unistd.h:
 
-./include/CppUTest/Utest.h:
+/usr/include/c++/4.6/i686-linux-gnu/./bits/atomic_word.h:
 
-./include/CppUTest/SimpleString.h:
+/usr/include/c++/4.6/initializer_list:
 
-./include/CppUTest/StandardCLibrary.h:
+/usr/include/c++/4.6/bits/basic_string.tcc:
 
-./include/CppUTest/UtestMacros.h:
+include/CppUTest/TestHarness.h:
 
-./include/CppUTest/TestResult.h:
+include/CppUTest/CppUTestConfig.h:
 
-./include/CppUTest/TestFailure.h:
+include/CppUTest/Utest.h:
 
-./include/CppUTest/TestPlugin.h:
+include/CppUTest/SimpleString.h:
 
-./include/CppUTest/MemoryLeakWarningPlugin.h:
+include/CppUTest/StandardCLibrary.h:
 
-./include/CppUTest/MemoryLeakDetectorNewMacros.h:
+/usr/lib/gcc/i686-linux-gnu/4.6/include/stdint.h:
 
-./include/CppUTestExt/MockFailure.h:
+/usr/include/stdint.h:
 
-./include/CppUTest/TestFailure.h:
+include/CppUTest/UtestMacros.h:
 
-./include/CppUTestExt/MockExpectedFunctionCall.h:
+include/CppUTest/TestResult.h:
 
-./include/CppUTestExt/MockFunctionCall.h:
+include/CppUTest/TestFailure.h:
 
-./include/CppUTestExt/MockNamedValue.h:
+include/CppUTest/TestPlugin.h:
 
-./include/CppUTestExt/MockExpectedFunctionsList.h:
+include/CppUTest/MemoryLeakWarningPlugin.h:
+
+include/CppUTest/MemoryLeakDetectorNewMacros.h:
+
+include/CppUTestExt/MockFailure.h:
+
+include/CppUTest/TestFailure.h:
+
+include/CppUTestExt/MockExpectedFunctionCall.h:
+
+include/CppUTestExt/MockFunctionCall.h:
+
+include/CppUTestExt/MockNamedValue.h:
+
+include/CppUTestExt/MockExpectedFunctionsList.h:
