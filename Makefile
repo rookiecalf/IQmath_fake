@@ -11,7 +11,7 @@ TEST_TARGET = \
 
 #--- Inputs ----#
 PROJECT_HOME_DIR = .
-CPPUTEST_HOME = ../cpputest
+CPPUTEST_HOME = cpputest
 
 CPP_PLATFORM = Gcc
 
