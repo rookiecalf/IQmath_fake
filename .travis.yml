@@ -4,5 +4,5 @@ compiler:
 - gcc
 
 # Change this to your needs
-script:  cd cpputest && sudo ./configure && make && cd .. && make
+script:  cd cpputest && ./configure && make && cd .. && make
 
