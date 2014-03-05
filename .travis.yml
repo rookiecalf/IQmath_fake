@@ -1,15 +1,7 @@
 --- 
 language: cpp
 compiler: 
-- clang
 - gcc
-rvm:
-  - "1.9.3"
-env: 
-  matrix: 
-  - BUILDTOOL=autotools
-  - BUILDTOOL=cmake
-  - BUILDTOOL=autotools_old_compilers
 
 # Change this to your needs
 script:  make
