@@ -33,7 +33,7 @@
 class TypeForTestingExpectedFunctionCall
 {
 public:
-	TypeForTestingExpectedFunctionCall(int val) : value(val) {}
+	TypeForTestingExpectedFunctionCall(int val) : value(val) {};
 	int value;
 };
 
@@ -42,13 +42,13 @@ class TypeForTestingExpectedFunctionCallComparator : public MockNamedValueCompar
 {
 public:
 	TypeForTestingExpectedFunctionCallComparator() {}
-	virtual ~TypeForTestingExpectedFunctionCallComparator() {}
+	virtual ~TypeForTestingExpectedFunctionCallComparator() {};
 
-	virtual bool isEqual(const void* object1, const void* object2)
+	virtual bool isEqual(void* object1, void* object2)
 	{
 		return ((TypeForTestingExpectedFunctionCall*)object1)->value == ((TypeForTestingExpectedFunctionCall*)object2)->value;
 	}
-	virtual SimpleString valueToString(const void* object)
+	virtual SimpleString valueToString(void* object)
 	{
 		return StringFrom(((TypeForTestingExpectedFunctionCall*)object)->value);
 	}

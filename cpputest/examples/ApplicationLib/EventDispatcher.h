@@ -29,6 +29,7 @@
 #define EVENTDISPATCHER__H
 
 #include <list>
+using namespace std;
 
 enum EventType
 {
@@ -47,12 +48,11 @@ class EventObserver
 public:
 	virtual void notify(const Event& event, int timeOutInSeconds)=0;
 	virtual void notifyRegistration(EventObserver* newObserver)=0;
-	virtual ~EventObserver() {}
 };
 
 class EventDispatcher
 {
-	std::list<std::pair<EventType, EventObserver*> > observerList_;
+	list<pair<EventType, EventObserver*> > observerList_;
 public:
 	EventDispatcher();
 

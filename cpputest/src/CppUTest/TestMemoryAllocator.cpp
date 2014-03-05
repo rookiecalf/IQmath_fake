@@ -34,13 +34,13 @@ static char* checkedMalloc(size_t size)
 {
 	char* mem = (char*) PlatformSpecificMalloc(size);
 	if (mem == 0)
-	FAIL("malloc returned null pointer");
+	FAIL("malloc returned null pointer");
 	return mem;
 }
 
-static TestMemoryAllocator* currentNewAllocator = 0;
-static TestMemoryAllocator* currentNewArrayAllocator = 0;
-static TestMemoryAllocator* currentMallocAllocator = 0;
+TestMemoryAllocator* currentNewAllocator = 0;
+TestMemoryAllocator* currentNewArrayAllocator = 0;
+TestMemoryAllocator* currentMallocAllocator = 0;
 
 void setCurrentNewAllocator(TestMemoryAllocator* allocator)
 {

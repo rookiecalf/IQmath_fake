@@ -37,17 +37,16 @@ static MockSupport global_mock;
 int MockSupport::callOrder_ = 0;
 int MockSupport::expectedCallOrder_ = 0;
 
-MockSupport& mock(const SimpleString& mockName, MockFailureReporter* failureReporterForThisCall)
+MockSupport& mock(const SimpleString& mockName)
 {
-	MockSupport& mock_support = (mockName != "") ? *global_mock.getMockSupportScope(mockName) : global_mock;
-	mock_support.setActiveReporter(failureReporterForThisCall);
-	return mock_support;
+	if (mockName != "")
+		return *global_mock.getMockSupportScope(mockName);
+	return global_mock;
 }
 
 MockSupport::MockSupport()
-	: strictOrdering_(false), standardReporter_(&defaultReporter_), ignoreOtherCalls_(false), enabled_(true), lastActualFunctionCall_(NULL), tracing_(false)
+	: strictOrdering_(false), reporter_(&defaultReporter_), ignoreOtherCalls_(false), enabled_(true), lastActualFunctionCall_(NULL), tracing_(false)
 {
-	setActiveReporter(NULL);
 }
 
 MockSupport::~MockSupport()
@@ -56,23 +55,18 @@ MockSupport::~MockSupport()
 
 void MockSupport::crashOnFailure()
 {
-	activeReporter_->crashOnFailure();
+	reporter_->crashOnFailure();
 }
 
-void MockSupport::setMockFailureStandardReporter(MockFailureReporter* reporter)
+void MockSupport::setMockFailureReporter(MockFailureReporter* reporter)
 {
-	standardReporter_ = (reporter != NULL) ? reporter : &defaultReporter_;
+	reporter_ = (reporter != NULL) ? reporter : &defaultReporter_;
 
 	if (lastActualFunctionCall_)
-		lastActualFunctionCall_->setMockFailureReporter(standardReporter_);
+		lastActualFunctionCall_->setMockFailureReporter(reporter_);
 
 	for (MockNamedValueListNode* p = data_.begin(); p; p = p->next())
-		if (getMockSupport(p)) getMockSupport(p)->setMockFailureStandardReporter(standardReporter_);
-}
-
-void MockSupport::setActiveReporter(MockFailureReporter* reporter)
-{
-	activeReporter_ = (reporter) ? reporter : standardReporter_;
+		if (getMockSupport(p)) getMockSupport(p)->setMockFailureReporter(reporter_);
 }
 
 void MockSupport::installComparator(const SimpleString& typeName, MockNamedValueComparator& comparator)
@@ -154,7 +148,7 @@ MockFunctionCall& MockSupport::expectNCalls(int amount, const SimpleString& func
 
 MockActualFunctionCall* MockSupport::createActualFunctionCall()
 {
-	lastActualFunctionCall_ = new MockActualFunctionCall(++callOrder_, activeReporter_, expectations_);
+	lastActualFunctionCall_ = new MockActualFunctionCall(++callOrder_, reporter_, expectations_);
 	return lastActualFunctionCall_;
 }
 
@@ -248,7 +242,7 @@ void MockSupport::failTestWithUnexpectedCalls()
 		if(getMockSupport(p))
 			expectationsList.addExpectations(getMockSupport(p)->expectations_);
 
-    MockExpectedCallsDidntHappenFailure failure(activeReporter_->getTestToFail(), expectationsList);
+    MockExpectedCallsDidntHappenFailure failure(reporter_->getTestToFail(), expectationsList);
     clear();
     failTest(failure);
 }
@@ -262,14 +256,15 @@ void MockSupport::failTestWithOutOfOrderCalls()
 		if(getMockSupport(p))
 			expectationsList.addExpectations(getMockSupport(p)->expectations_);
 
-    MockCallOrderFailure failure(activeReporter_->getTestToFail(), expectationsList);
+    MockCallOrderFailure failure(reporter_->getTestToFail(), expectationsList);
     clear();
     failTest(failure);
 }
 
 void MockSupport::failTest(MockFailure& failure)
 {
-	activeReporter_->failTest(failure);
+	if (reporter_->getAmountOfTestFailures() == 0)
+		reporter_->failTest(failure);
 }
 
 void MockSupport::checkExpectationsOfLastCall()
@@ -346,21 +341,6 @@ MockNamedValue MockSupport::getData(const SimpleString& name)
 	return *value;
 }
 
-MockSupport* MockSupport::clone()
-{
-	MockSupport* newMock = new MockSupport;
-	newMock->setMockFailureStandardReporter(standardReporter_);
-	if (ignoreOtherCalls_) newMock->ignoreOtherCalls();
-
-	if (!enabled_) newMock->disable();
-
-	if (strictOrdering_) newMock->strictOrder();
-
-	newMock->tracing(tracing_);
-	newMock->installComparators(comparatorRepository_);
-	return newMock;
-}
-
 MockSupport* MockSupport::getMockSupportScope(const SimpleString& name)
 {
 	SimpleString mockingSupportName = MOCK_SUPPORT_SCOPE_PREFIX;
@@ -371,7 +351,13 @@ MockSupport* MockSupport::getMockSupportScope(const SimpleString& name)
 		return (MockSupport*) getData(mockingSupportName).getObjectPointer();
 	}
 
-	MockSupport *newMock = clone();
+	MockSupport *newMock = new MockSupport;
+
+	newMock->setMockFailureReporter(reporter_);
+	if (ignoreOtherCalls_) newMock->ignoreOtherCalls();
+	if (!enabled_) newMock->disable();
+	newMock->tracing(tracing_);
+	newMock->installComparators(comparatorRepository_);
 
 	setDataObject(mockingSupportName, "MockSupport", newMock);
 	return newMock;

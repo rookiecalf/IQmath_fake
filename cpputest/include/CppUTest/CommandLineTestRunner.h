@@ -34,7 +34,6 @@
 #include "TestFilter.h"
 
 class JUnitTestOutput;
-class TestRegistry;
 
 #define DEF_PLUGIN_MEM_LEAK "MemoryLeakPlugin"
 #define DEF_PLUGIN_SET_POINTER "SetPointerPlugin"
@@ -49,7 +48,7 @@ public:
 
 	static int RunAllTests(int ac, const char** av);
 	static int RunAllTests(int ac, char** av);
-	CommandLineTestRunner(int ac, const char** av, TestOutput*, TestRegistry* registry);
+	CommandLineTestRunner(int ac, const char** av, TestOutput*);
 
 	virtual ~CommandLineTestRunner();
 	int runAllTestsMain();
@@ -58,7 +57,6 @@ private:
 	TestOutput* output_;
 	JUnitTestOutput* jUnitOutput_;
 	CommandLineArguments* arguments_;
-	TestRegistry* registry_;
 
 	bool parseArguments(TestPlugin*);
 	int runAllTests();

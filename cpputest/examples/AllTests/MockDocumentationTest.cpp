@@ -28,7 +28,10 @@
 
 #include "CppUTest/TestHarness.h"
 #include "CppUTestExt/MockSupport.h"
-#include "CppUTestExt/MockSupport_c.h"
+
+extern "C" {
+	#include "CppUTestExt/MockSupport_c.h"
+}
 
 TEST_GROUP(FirstTestGroup)
 {
@@ -49,7 +52,7 @@ TEST_GROUP(MockDocumentation)
 {
 };
 
-static void productionCode()
+void productionCode()
 {
 	mock().actualCall("productionCode");
 }
@@ -65,7 +68,7 @@ class ClassFromProductionCode
 {
 public:
 	virtual void importantFunction(){}
-	virtual ~ClassFromProductionCode() {}
+	virtual ~ClassFromProductionCode() {};
 };
 
 class ClassFromProductionCodeMock : public ClassFromProductionCode
@@ -88,7 +91,7 @@ TEST(MockDocumentation, SimpleScenarioObject)
 	delete object;
 }
 
-static void parameters_function(int p1, const char* p2)
+void parameters_function(int p1, const char* p2)
 {
 	void* object = (void*) 1;
 	mock().actualCall("function").onObject(object).withParameter("p1", p1).withParameter("p2", p2);
@@ -104,11 +107,11 @@ TEST(MockDocumentation, parameters)
 class MyTypeComparator : public MockNamedValueComparator
 {
 public:
-	virtual bool isEqual(const void* object1, const void* object2)
+	virtual bool isEqual(void* object1, void* object2)
 	{
 		return object1 == object2;
 	}
-	virtual SimpleString valueToString(const void* object)
+	virtual SimpleString valueToString(void* object)
 	{
 		return StringFrom(object);
 	}
@@ -146,7 +149,7 @@ TEST(MockDocumentation, setData)
 	POINTERS_EQUAL(pobject, &object);
 }
 
-static void doSomethingThatWouldOtherwiseBlowUpTheMockingFramework()
+void doSomethingThatWouldOtherwiseBlowUpTheMockingFramework()
 {
 }
 
@@ -174,12 +177,12 @@ TEST(MockDocumentation, scope)
 	mock("xmlparser").actualCall("open");
 }
 
-static  int equalMethod(const void* object1, const void* object2)
+static  int equalMethod(void* object1, void* object2)
 {
 	return object1 == object2;
 }
 
-static char* toStringMethod(const void*)
+static char* toStringMethod(void*)
 {
 	return (char*) "string";
 }

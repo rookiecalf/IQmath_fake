@@ -32,8 +32,6 @@
 #undef new
 #endif
 
-#undef RUN_ALL_TESTS
-
 #define GTEST_DONT_DEFINE_TEST 1
 #define GTEST_DONT_DEFINE_FAIL 1
 #include "gmock/gmock.h"
@@ -44,7 +42,7 @@ using testing::Return;
 using testing::NiceMock;
 #endif
 
-#ifdef CPPUTEST_USE_NEW_MACROS
+#if CPPUTEST_USE_NEW_MACROS
 #include "CppUTest/MemoryLeakDetectorNewMacros.h"
 #endif
 

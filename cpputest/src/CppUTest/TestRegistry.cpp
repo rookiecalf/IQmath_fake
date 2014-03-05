@@ -59,7 +59,7 @@ void TestRegistry::runAllTests(TestResult& result)
 		result.countTest();
 		if (testShouldRun(test, result)) {
 			result.currentTestStarted(test);
-			test->runOneTest(firstPlugin_, result);
+			test->runOneTestWithPlugins(firstPlugin_, result);
 			result.currentTestEnded(test);
 		}
 
@@ -161,15 +161,6 @@ void TestRegistry::removePluginByName(const SimpleString& name)
 	if (firstPlugin_->getName() == name) firstPlugin_ = firstPlugin_->getNext();
 	firstPlugin_->removePluginByName(name);
 }
-
-int TestRegistry::countPlugins()
-{
-	int count = 0;
-	for (TestPlugin* plugin = firstPlugin_; plugin != NullTestPlugin::instance(); plugin = plugin->getNext())
-		count++;
-	return count;
-}
-
 
 UtestShell* TestRegistry::getFirstTest()
 {

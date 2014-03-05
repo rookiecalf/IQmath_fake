@@ -2,27 +2,15 @@
 #ifndef STANDARDCLIBRARY_H_
 #define STANDARDCLIBRARY_H_
 
-#include "CppUTestConfig.h"
-
-#if CPPUTEST_USE_STD_C_LIB
-
-/* Needed for size_t */
-#include <stddef.h>
-
-/* Sometimes the C++ library does an #undef in stdlib of malloc and free. We want to prevent that */
-#ifdef __cplusplus
- #if CPPUTEST_USE_STD_CPP_LIB
-  #include <cstdlib>
- #endif
+#ifndef CPPUTEST_USE_STD_C_LIB
+#ifdef CPPUTEST_STD_C_LIB_DISABLED
+#define CPPUTEST_USE_STD_C_LIB 0
+#else
+#define CPPUTEST_USE_STD_C_LIB 1
+#endif
 #endif
 
-/* Needed for malloc */
-#include <stdlib.h>
-
-/* Needed for ... */
-#include <stdarg.h>
-
-#else
+#if CPPUTEST_USE_STD_C_LIB == 0
 
 #ifdef __KERNEL__
 
@@ -49,7 +37,7 @@
 #ifdef __SIZE_TYPE__
 typedef __SIZE_TYPE__ size_t;
 #else
-typedef long unsigned int size_t;
+typedef unsigned int size_t;
 #endif
 
 typedef char* va_list;
@@ -62,6 +50,24 @@ extern void     free(void *);
 #define va_end(ap)              (void) 0
 
 #endif
+
+#else
+
+/* Needed for size_t */
+#include <stddef.h>
+
+/* Sometimes the C++ library does an #undef in stdlib of malloc and free. We want to prevent that */
+#ifdef __cplusplus
+#if CPPUTEST_USE_STD_CPP_LIB
+#include <cstdlib>
+#endif
+#endif
+
+/* Needed for malloc */
+#include <stdlib.h>
+
+/* Needed for ... */
+#include <stdarg.h>
 
 #endif
 

@@ -3,24 +3,24 @@
 #include "CppUTest/TestOutput.h"
 #include "CppUTest/TestPlugin.h"
 
-static void orig_func1()
+void orig_func1()
 {
 }
 
-static void stub_func1()
+void stub_func1()
 {
 }
 
-static void orig_func2()
+void orig_func2()
 {
 }
 
-static void stub_func2()
+void stub_func2()
 {
 }
 
-static void (*fp1)();
-static void (*fp2)();
+void (*fp1)();
+void (*fp2)();
 
 TEST_GROUP(SetPointerPluginTest)
 {
@@ -88,6 +88,7 @@ public:
 		numOfFpSets(num)
 	{
 	}
+	;
 
 	void setup()
 	{
@@ -107,9 +108,9 @@ IGNORE_TEST(SetPointerPluginTest, installTooMuchFunctionPointer)
 	delete tst;
 }
 
-static double orig_double = 3.0;
-static double* orig_double_ptr = &orig_double;
-static double stub_double = 4.0;
+double orig_double = 3.0;
+double* orig_double_ptr = &orig_double;
+double stub_double = 4.0;
 
 class SetDoublePointerUtest: public UtestShell
 {

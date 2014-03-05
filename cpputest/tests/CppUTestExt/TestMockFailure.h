@@ -38,13 +38,26 @@ class MockFailureReporterForTest : public MockFailureReporter
 public:
 
 	SimpleString mockFailureString;
+	int amountOfFailures;
+
+	MockFailureReporterForTest() : amountOfFailures(0) {};
 
 	virtual void failTest(const MockFailure& failure)
 	{
+		amountOfFailures++;
 		mockFailureString = failure.getMessage();
 	}
 
-	static MockFailureReporterForTest* getReporter();
+	virtual int getAmountOfTestFailures()
+	{
+		return amountOfFailures;
+	}
+
+	static MockFailureReporterForTest* getReporter()
+	{
+		static MockFailureReporterForTest reporter;
+		return &reporter;
+	}
 };
 
 inline UtestShell* mockFailureTest()
@@ -60,6 +73,7 @@ inline SimpleString mockFailureString()
 inline void CLEAR_MOCK_FAILURE()
 {
 	MockFailureReporterForTest::getReporter()->mockFailureString = "";
+	MockFailureReporterForTest::getReporter()->amountOfFailures = 0;
 }
 
 inline void CHECK_EXPECTED_MOCK_FAILURE_LOCATION(const MockFailure& expectedFailure, const char* file, int line)

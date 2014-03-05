@@ -104,11 +104,11 @@ public:
 class TestMemoryAllocatorComparator : public MockNamedValueComparator
 {
 public:
-	bool isEqual(const void* object1, const void* object2)
+	bool isEqual(void* object1, void* object2)
 	{
 		return ((TestMemoryAllocator*)object1)->name() == ((TestMemoryAllocator*)object2)->name();
 	}
-	SimpleString valueToString(const void* object)
+	SimpleString valueToString(void* object)
 	{
 		return ((TestMemoryAllocator*)object)->name();
 	}

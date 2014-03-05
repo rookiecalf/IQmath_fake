@@ -286,7 +286,7 @@ MockExpectedFunctionsList::MockExpectedFunctionsListNode* MockExpectedFunctionsL
 	return NULL;
 }
 
-static SimpleString stringOrNoneTextWhenEmpty(const SimpleString& inputString, const SimpleString& linePrefix)
+SimpleString stringOrNoneTextWhenEmpty(const SimpleString& inputString, const SimpleString& linePrefix)
 {
 	SimpleString str = inputString;
 	if (str == "") {
@@ -296,7 +296,7 @@ static SimpleString stringOrNoneTextWhenEmpty(const SimpleString& inputString, c
 	return str;
 }
 
-static SimpleString appendStringOnANewLine(const SimpleString& inputString, const SimpleString& linePrefix, const SimpleString& stringToAppend)
+SimpleString appendStringOnANewLine(const SimpleString& inputString, const SimpleString& linePrefix, const SimpleString& stringToAppend)
 {
 	SimpleString str = inputString;
 	if (str != "") str += "\n";

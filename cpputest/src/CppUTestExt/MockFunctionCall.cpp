@@ -103,14 +103,14 @@ MockFunctionCall& MockFunctionCallComposite::withCallOrder(int)
 	return *this;
 }
 
-MockFunctionCall& MockFunctionCallComposite::withIntParameter(const SimpleString& name, int value)
+MockFunctionCall& MockFunctionCallComposite::withParameter(const SimpleString& name, int value)
 {
 	for (MockFunctionCallCompositeNode* node = head_; node != NULL; node = node->next_)
 		node->call_.withParameter(name, value);
 	return *this;
 }
 
-MockFunctionCall& MockFunctionCallComposite::withDoubleParameter(const SimpleString& name, double value)
+MockFunctionCall& MockFunctionCallComposite::withParameter(const SimpleString& name, double value)
 {
 	for (MockFunctionCallCompositeNode* node = head_; node != NULL; node = node->next_)
 		node->call_.withParameter(name, value);
@@ -118,21 +118,21 @@ MockFunctionCall& MockFunctionCallComposite::withDoubleParameter(const SimpleStr
 
 }
 
-MockFunctionCall& MockFunctionCallComposite::withStringParameter(const SimpleString& name, const char* value)
+MockFunctionCall& MockFunctionCallComposite::withParameter(const SimpleString& name, const char* value)
 {
 	for (MockFunctionCallCompositeNode* node = head_; node != NULL; node = node->next_)
 		node->call_.withParameter(name, value);
 	return *this;
 }
 
-MockFunctionCall& MockFunctionCallComposite::withPointerParameter(const SimpleString& name, void* value)
+MockFunctionCall& MockFunctionCallComposite::withParameter(const SimpleString& name, void* value)
 {
 	for (MockFunctionCallCompositeNode* node = head_; node != NULL; node = node->next_)
 		node->call_.withParameter(name, value);
 	return *this;
 }
 
-MockFunctionCall& MockFunctionCallComposite::withParameterOfType(const SimpleString& typeName, const SimpleString& name, const void* value)
+MockFunctionCall& MockFunctionCallComposite::withParameterOfType(const SimpleString& typeName, const SimpleString& name, void* value)
 {
 	for (MockFunctionCallCompositeNode* node = head_; node != NULL; node = node->next_)
 		node->call_.withParameterOfType(typeName, name, value);
@@ -192,11 +192,6 @@ MockFunctionCall& MockFunctionCallComposite::onObject(void* object)
 	return *this;
 }
 
-MockFunctionCall& MockIgnoredCall::instance()
-{
-    static MockIgnoredCall call;
-    return call;
-}
 
 MockFunctionCallTrace::MockFunctionCallTrace()
 {
@@ -220,7 +215,7 @@ MockFunctionCall& MockFunctionCallTrace::withCallOrder(int callOrder)
 	return *this;
 }
 
-MockFunctionCall& MockFunctionCallTrace::withIntParameter(const SimpleString& name, int value)
+MockFunctionCall& MockFunctionCallTrace::withParameter(const SimpleString& name, int value)
 {
 	traceBuffer_ += " ";
 	traceBuffer_ += name;
@@ -229,7 +224,7 @@ MockFunctionCall& MockFunctionCallTrace::withIntParameter(const SimpleString& na
 	return *this;
 }
 
-MockFunctionCall& MockFunctionCallTrace::withDoubleParameter(const SimpleString& name, double value)
+MockFunctionCall& MockFunctionCallTrace::withParameter(const SimpleString& name, double value)
 {
 	traceBuffer_ += " ";
 	traceBuffer_ += name;
@@ -238,7 +233,7 @@ MockFunctionCall& MockFunctionCallTrace::withDoubleParameter(const SimpleString&
 	return *this;
 }
 
-MockFunctionCall& MockFunctionCallTrace::withStringParameter(const SimpleString& name, const char* value)
+MockFunctionCall& MockFunctionCallTrace::withParameter(const SimpleString& name, const char* value)
 {
 	traceBuffer_ += " ";
 	traceBuffer_ += name;
@@ -247,7 +242,7 @@ MockFunctionCall& MockFunctionCallTrace::withStringParameter(const SimpleString&
 	return *this;
 }
 
-MockFunctionCall& MockFunctionCallTrace::withPointerParameter(const SimpleString& name, void* value)
+MockFunctionCall& MockFunctionCallTrace::withParameter(const SimpleString& name, void* value)
 {
 	traceBuffer_ += " ";
 	traceBuffer_ += name;
@@ -256,7 +251,7 @@ MockFunctionCall& MockFunctionCallTrace::withPointerParameter(const SimpleString
 	return *this;
 }
 
-MockFunctionCall& MockFunctionCallTrace::withParameterOfType(const SimpleString& typeName, const SimpleString& name, const void* value)
+MockFunctionCall& MockFunctionCallTrace::withParameterOfType(const SimpleString& typeName, const SimpleString& name, void* value)
 {
 	traceBuffer_ += " ";
 	traceBuffer_ += typeName;

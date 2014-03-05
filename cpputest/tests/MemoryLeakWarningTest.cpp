@@ -32,7 +32,6 @@
 #include "CppUTest/MemoryLeakDetector.h"
 #include "CppUTest/TestMemoryAllocator.h"
 #include "CppUTest/TestTestingFixture.h"
-#include "CppUTest/TestHarness_c.h"
 
 static char* leak1;
 static long* leak2;
@@ -81,10 +80,10 @@ TEST_GROUP(MemoryLeakWarningTest)
 	}
 };
 
-static void _testTwoLeaks()
+void _testTwoLeaks()
 {
 	leak1 = detector->allocMemory(allocator, 10);
-	leak2 = (long*) (void*) detector->allocMemory(allocator, 4);
+	leak2 = (long*) detector->allocMemory(allocator, 4);
 }
 
 TEST(MemoryLeakWarningTest, TwoLeaks)
@@ -95,11 +94,11 @@ TEST(MemoryLeakWarningTest, TwoLeaks)
 	fixture->assertPrintContains("Total number of leaks:  2");
 }
 
-static void _testIgnore2()
+void _testIgnore2()
 {
 	memPlugin->expectLeaksInTest(2);
 	leak1 = detector->allocMemory(allocator, 10);
-	leak2 = (long*) (void*) detector->allocMemory(allocator, 4);
+	leak2 = (long*) detector->allocMemory(allocator, 4);
 }
 
 TEST(MemoryLeakWarningTest, Ignore2)
@@ -122,8 +121,8 @@ TEST(MemoryLeakWarningTest, FailingTestDoesNotReportMemoryLeaks)
 	LONGS_EQUAL(1, fixture->getFailureCount());
 }
 
-static bool memoryLeakDetectorWasDeleted = false;
-static bool memoryLeakFailureWasDelete = false;
+bool memoryLeakDetectorWasDeleted = false;
+bool memoryLeakFailureWasDelete = false;
 
 class DummyMemoryLeakDetector : public MemoryLeakDetector
 {
@@ -201,13 +200,9 @@ TEST(MemoryLeakWarningGlobalDetectorTest, turnOffNewOverloadsCausesNoAdditionalL
 
 	char* arrayMemory = new char[100];
 	char* nonArrayMemory = new char;
-	char* mallocMemory = (char*) cpputest_malloc_location_with_leak_detection(10, "file", 10);
-	char* reallocMemory = (char*) cpputest_realloc_location_with_leak_detection(NULL, 10, "file", 10);
 
 	LONGS_EQUAL(storedAmountOfLeaks, detector->totalMemoryLeaks(mem_leak_period_all));
 
-	cpputest_free_location_with_leak_detection(mallocMemory, "file", 10);
-	cpputest_free_location_with_leak_detection(reallocMemory, "file", 10);
 	delete [] arrayMemory;
 	delete nonArrayMemory;
 }
@@ -264,11 +259,11 @@ TEST(MemoryLeakWarningGlobalDetectorTest, crashOnLeakWithOperatorNewArray)
 	MemoryLeakWarningPlugin::turnOffNewDeleteOverloads();
 }
 
+#endif
+
 TEST(MemoryLeakWarningGlobalDetectorTest, crashOnLeakWithOperatorMalloc)
 {
 	MemoryLeakWarningPlugin::setGlobalDetector(dummyDetector, dummyReporter);
-
-	MemoryLeakWarningPlugin::turnOnNewDeleteOverloads();
 
 	crash_on_allocation_number(1);
 	char* memory = (char*) cpputest_malloc(10);
@@ -278,7 +273,6 @@ TEST(MemoryLeakWarningGlobalDetectorTest, crashOnLeakWithOperatorMalloc)
 	MemoryLeakWarningPlugin::turnOffNewDeleteOverloads();
 }
 
-#endif
 
 #if CPPUTEST_USE_STD_CPP_LIB
 
@@ -294,7 +288,7 @@ TEST(MemoryLeakWarningGlobalDetectorTest, turnOffNewOverloadsNoThrowCausesNoAddi
 
 	delete nonMemoryNoThrow;
 	delete nonArrayMemoryNoThrow;
-#ifdef CPPUTEST_USE_NEW_MACROS
+#if CPPUTEST_USE_NEW_MACROS
 	#include "CppUTest/MemoryLeakDetectorNewMacros.h"
 #endif
 }

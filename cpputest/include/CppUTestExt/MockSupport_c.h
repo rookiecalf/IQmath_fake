@@ -28,10 +28,6 @@
 #ifndef D_MockSupport_c_h
 #define D_MockSupport_c_h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 typedef enum {
 	MOCKVALUETYPE_INTEGER,
 	MOCKVALUETYPE_DOUBLE,
@@ -48,7 +44,7 @@ typedef struct SMockValue_c
 		double doubleValue;
 		const char* stringValue;
 		void* pointerValue;
-		const void* objectValue;
+		void* objectValue;
 	} value;
 } MockValue_c;
 
@@ -70,8 +66,8 @@ struct SMockFunctionCall_c
 
 };
 
-typedef int (*MockTypeEqualFunction_c)(const void* object1, const void* object2);
-typedef char* (*MockTypeValueToStringFunction_c)(const void* object1);
+typedef int (*MockTypeEqualFunction_c)(void* object1, void* object2);
+typedef char* (*MockTypeValueToStringFunction_c)(void* object1);
 
 typedef struct SMockSupport_c MockSupport_c;
 struct SMockSupport_c
@@ -79,9 +75,6 @@ struct SMockSupport_c
 	MockFunctionCall_c* (*expectOneCall)(const char* name);
 	MockFunctionCall_c* (*actualCall)(const char* name);
 	MockValue_c (*returnValue)(void);
-
-	void (*enable)(void);
-	void (*disable)(void);
 
 	void (*setIntData) (const char* name, int value);
 	void (*setDoubleData) (const char* name, double value);
@@ -102,9 +95,5 @@ struct SMockSupport_c
 
 MockSupport_c* mock_c(void);
 MockSupport_c* mock_scope_c(const char* scope);
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif

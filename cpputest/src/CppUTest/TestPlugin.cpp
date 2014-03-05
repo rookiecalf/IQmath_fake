@@ -34,7 +34,7 @@ TestPlugin::TestPlugin(const SimpleString& name) :
 }
 
 TestPlugin::TestPlugin(TestPlugin* next) :
-	next_(next), name_("null"), enabled_(true)
+	next_(next), name_("null")
 {
 }
 
@@ -134,12 +134,12 @@ SetPointerPlugin::~SetPointerPlugin()
 {
 }
 
-void CppUTestStore(void**function)
+void CppUTestStore(void**function, void*value)
 {
 	if (pointerTableIndex >= SetPointerPlugin::MAX_SET) {
 		FAIL("Maximum number of function pointers installed!");
 	}
-	setlist[pointerTableIndex].orig_value = *function;
+	setlist[pointerTableIndex].orig_value = value;
 	setlist[pointerTableIndex].orig = function;
 	pointerTableIndex++;
 }

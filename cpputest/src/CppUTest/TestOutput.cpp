@@ -247,7 +247,3 @@ void ConsoleTestOutput::flush()
 {
 	PlatformSpecificFlush();
 }
-
-StringBufferTestOutput::~StringBufferTestOutput()
-{
-}

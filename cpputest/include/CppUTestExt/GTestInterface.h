@@ -25,35 +25,28 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "CppUTest/CppUTestConfig.h"
 #include "CppUTest/Utest.h"
 #include "CppUTest/TestResult.h"
 #include "CppUTest/TestFailure.h"
 
 #define TEST(testGroup, testName) \
-  /* external declaration */ \
-  class TEST_##testGroup##_##testName##_TestShell; \
-  extern TEST_##testGroup##_##testName##_TestShell TEST_##testGroup##_##testName##_TestShell_Instance; \
   class TEST_##testGroup##_##testName##_Test : public Utest \
 { public: TEST_##testGroup##_##testName##_Test () : Utest () {} \
        void testBody(); }; \
   class TEST_##testGroup##_##testName##_TestShell : public UtestShell \
 {  public: virtual Utest* createTest() { return new TEST_##testGroup##_##testName##_Test; } \
   } TEST_##testGroup##_##testName##_TestShell_Instance; \
-  static TestInstaller TEST_##testGroup##_##testName##_Installer(TEST_##testGroup##_##testName##_TestShell_Instance, #testGroup, #testName, __FILE__,__LINE__); \
+  TestInstaller TEST_##testGroup##_##testName##_Installer(TEST_##testGroup##_##testName##_TestShell_Instance, #testGroup, #testName, __FILE__,__LINE__); \
 	void TEST_##testGroup##_##testName##_Test::testBody()
 
 #define TEST_F(testGroup, testName) \
-/* external declaration */ \
-  class TEST_##testGroup##_##testName##_TestShell; \
-  extern TEST_##testGroup##_##testName##_TestShell TEST_##testGroup##_##testName##_TestShell_instance; \
   class TEST_##testGroup##_##testName##_Test : public testGroup \
 { public: TEST_##testGroup##_##testName##_Test () : testGroup () {} \
        void testBody(); }; \
   class TEST_##testGroup##_##testName##_TestShell : public UtestShell { \
 	  virtual Utest* createTest() { return new TEST_##testGroup##_##testName##_Test; } \
   } TEST_##testGroup##_##testName##_TestShell_instance; \
-  static TestInstaller TEST_##testGroup##_##testName##_Installer(TEST_##testGroup##_##testName##_TestShell_instance, #testGroup, #testName, __FILE__,__LINE__); \
+  TestInstaller TEST_##testGroup##_##testName##_Installer(TEST_##testGroup##_##testName##_TestShell_instance, #testGroup, #testName, __FILE__,__LINE__); \
 	void TEST_##testGroup##_##testName##_Test::testBody()
 
 /*
@@ -65,7 +58,17 @@
  */
 
 #define EXPECT_EQ(expected, actual) \
-  { UtestShell::getCurrent()->assertEquals(((expected) != (actual)), StringFrom(expected).asCharString(), StringFrom(actual).asCharString(), __FILE__, __LINE__); }
+  if ((expected) != (actual))\
+  {\
+	 { \
+      UtestShell::getTestResult()->countCheck();\
+  	   CheckEqualFailure _f(UtestShell::getCurrent(), __FILE__, __LINE__, StringFrom(expected), StringFrom(actual)); \
+      UtestShell::getTestResult()->addFailure(_f);\
+    } \
+    UtestShell::getCurrent()->exitCurrentTest(); \
+  }\
+  else\
+	 UtestShell::getTestResult()->countCheck();
 
 #define EXPECT_TRUE(condition) \
 	{ UtestShell::getCurrent()->assertTrue((condition) != 0, "EXPECT_TRUE", #condition, __FILE__, __LINE__); }

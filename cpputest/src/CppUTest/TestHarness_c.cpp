@@ -25,49 +25,55 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+///////////////////////////////////////////////////////////////////////////////
+//
+// TESTHARNESS_c.H
+//
+//
+///////////////////////////////////////////////////////////////////////////////
 #include "CppUTest/TestHarness.h"
 #include "CppUTest/MemoryLeakDetector.h"
 #include "CppUTest/TestMemoryAllocator.h"
 #include "CppUTest/PlatformSpecificFunctions.h"
-#include "CppUTest/TestHarness_c.h"
 
 extern "C"
 {
 
+#include "CppUTest/TestHarness_c.h"
 
 void CHECK_EQUAL_C_INT_LOCATION(int expected, int actual, const char* fileName, int lineNumber)
 {
-	UtestShell::getCurrent()->assertLongsEqual((long)expected, (long)actual,  fileName, lineNumber, TestTerminatorWithoutExceptions());
+	CHECK_EQUAL_LOCATION((long)expected, (long)actual, fileName, lineNumber);
 }
 
 void CHECK_EQUAL_C_REAL_LOCATION(double expected, double actual, double threshold, const char* fileName, int lineNumber)
 {
-	UtestShell::getCurrent()->assertDoublesEqual(expected, actual, threshold,  fileName, lineNumber, TestTerminatorWithoutExceptions());
+	DOUBLES_EQUAL_LOCATION(expected, actual, threshold, fileName, lineNumber);
 }
 
 void CHECK_EQUAL_C_CHAR_LOCATION(char expected, char actual, const char* fileName, int lineNumber)
 {
-	UtestShell::getCurrent()->assertEquals(((expected) != (actual)), StringFrom(expected).asCharString(), StringFrom(actual).asCharString(), fileName, lineNumber, TestTerminatorWithoutExceptions());
+	CHECK_EQUAL_LOCATION(expected, actual, fileName, lineNumber);
 }
 
 void CHECK_EQUAL_C_STRING_LOCATION(const char* expected, const char* actual, const char* fileName, int lineNumber)
 {
-	UtestShell::getCurrent()->assertCstrEqual(expected, actual, fileName, lineNumber, TestTerminatorWithoutExceptions());
+	STRCMP_EQUAL_LOCATION(expected, actual, fileName, lineNumber);
 }
 
 void FAIL_TEXT_C_LOCATION(const char* text, const char* fileName, int lineNumber)
 {
-	UtestShell::getCurrent()->fail(text,  fileName, lineNumber, TestTerminatorWithoutExceptions());
+	FAIL_LOCATION(text, fileName, lineNumber);
 }
 
 void FAIL_C_LOCATION(const char* fileName, int lineNumber)
 {
-	UtestShell::getCurrent()->fail("",  fileName, lineNumber, TestTerminatorWithoutExceptions());
+	FAIL_LOCATION("", fileName, lineNumber);
 }
 
 void CHECK_C_LOCATION(int condition, const char* conditionString, const char* fileName, int lineNumber)
 {
-	UtestShell::getCurrent()->assertTrue(condition, "CHECK_C", conditionString, fileName, lineNumber, TestTerminatorWithoutExceptions());
+	CHECK_LOCATION_TRUE(((condition) == 0 ? false : true), "CHECK_C", conditionString, fileName, lineNumber);
 }
 
 enum { NO_COUNTDOWN = -1, OUT_OF_MEMORRY = 0 };
@@ -140,25 +146,25 @@ void* cpputest_malloc_location(size_t size, const char* file, int line)
 {
 	countdown();
 	malloc_count++;
-	return cpputest_malloc_location_with_leak_detection(size, file, line);
+	return MemoryLeakWarningPlugin::getGlobalDetector()->allocMemory(getCurrentMallocAllocator(), size, file, line, true);
 }
 
 void* cpputest_calloc_location(size_t num, size_t size, const char* file, int line)
 {
 	void* mem = cpputest_malloc_location(num * size, file, line);
-	if (mem)    
-	    PlatformSpecificMemset(mem, 0, num*size);
+	PlatformSpecificMemset(mem, 0, num*size);
 	return mem;
 }
 
 void* cpputest_realloc_location(void* memory, size_t size, const char* file, int line)
 {
-	return cpputest_realloc_location_with_leak_detection(memory, size, file, line);
+	return MemoryLeakWarningPlugin::getGlobalDetector()->reallocMemory(getCurrentMallocAllocator(), (char*) memory, size, file, line, true);
 }
 
 void cpputest_free_location(void* buffer, const char* file, int line)
 {
-	cpputest_free_location_with_leak_detection(buffer, file, line);
+	MemoryLeakWarningPlugin::getGlobalDetector()->invalidateMemory((char*) buffer);
+	MemoryLeakWarningPlugin::getGlobalDetector()->deallocMemory(getCurrentMallocAllocator(), (char*) buffer, file, line, true);
 }
 
 }

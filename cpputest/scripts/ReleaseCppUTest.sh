@@ -1,8 +1,5 @@
-#!/bin/bash
+#!/bin/sh -x
 #source in release generator script
-
-echo "Do not use this anymore, please use \"configure; make dist\""
-exit
 
 if [ ! -d "scripts" ]; then
   echo "You have to run this script from the CPPUTEST_HOME directory!";

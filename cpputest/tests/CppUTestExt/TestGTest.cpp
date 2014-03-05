@@ -31,13 +31,10 @@
 
 #include "gtest/gtest.h"
 
-static bool g_GTestEqual_has_been_called = false;
 TEST(GTestSimpleTest, GTestEqual)
 {
 	EXPECT_EQ(1, 1);
-	g_GTestEqual_has_been_called = true;
 }
-
 TEST(GTestSimpleTest, GTestAssertEq)
 {
 	ASSERT_EQ(1, 1);
@@ -171,21 +168,7 @@ TEST(gtest, SimpleGoogleTestGroupExists)
 	CHECK(registry->findTestWithGroup("GTestSimpleTest"));
 }
 
-TEST(gtest, SimpleGoogleTestGetCalled)
-{
-	StringBufferTestOutput output;
-	TestResult result(output);
-	TestPlugin plugin("dummy");
-
-	TestRegistry* registry = TestRegistry::getCurrentRegistry();
-	UtestShell * shell = registry->findTestWithName("GTestEqual");
-	g_GTestEqual_has_been_called = false;
-	shell->runOneTest(&plugin, result);
-
-	CHECK(g_GTestEqual_has_been_called);
-}
-
-static bool afterCheck;
+bool afterCheck;
 
 static void _failMethodEXPECT_EQ()
 {

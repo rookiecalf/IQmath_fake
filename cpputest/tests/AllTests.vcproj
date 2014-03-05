@@ -45,7 +45,6 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\include;..\include\Platforms\VisualCpp;..\include\CppUTestExt\CppUTestGMock;..\include\CppUTestExt\CppUTestGTest"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -70,7 +69,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="..\Release\CppUTest.lib $(NOINHERIT)"
 				OutputFile=".\Release/AllTests.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"

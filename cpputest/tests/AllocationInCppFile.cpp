@@ -3,7 +3,6 @@
  */
 #undef new
 #include "CppUTest/MemoryLeakDetectorNewMacros.h"
-#include "AllocationInCppFile.h"
 
 char* newAllocation()
 {
@@ -26,9 +25,3 @@ char* newArrayAllocationWithoutMacro()
 {
 	return new char[100];
 }
-
-ClassThatThrowsAnExceptionInTheConstructor::ClassThatThrowsAnExceptionInTheConstructor()
-{
-  throw 1;
-}
-

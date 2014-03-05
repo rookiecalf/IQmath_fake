@@ -7,10 +7,4 @@ char* newArrayAllocation();
 char* newAllocationWithoutMacro();
 char* newArrayAllocationWithoutMacro();
 
-class ClassThatThrowsAnExceptionInTheConstructor
-{
-public:
-  ClassThatThrowsAnExceptionInTheConstructor() __no_return__;
-};
-
 #endif

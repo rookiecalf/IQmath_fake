@@ -31,8 +31,8 @@
 #include "CppUTest/JUnitTestOutput.h"
 #include "CppUTest/TestRegistry.h"
 
-CommandLineTestRunner::CommandLineTestRunner(int ac, const char** av, TestOutput* output, TestRegistry* registry) :
-	output_(output), jUnitOutput_(NULL), arguments_(NULL), registry_(registry)
+CommandLineTestRunner::CommandLineTestRunner(int ac, const char** av, TestOutput* output) :
+	output_(output), jUnitOutput_(new JUnitTestOutput)
 {
 	arguments_ = new CommandLineArguments(ac, av);
 }
@@ -58,14 +58,13 @@ int CommandLineTestRunner::RunAllTests(int ac, const char** av)
 	TestRegistry::getCurrentRegistry()->installPlugin(&memLeakWarn);
 
 	{
-		CommandLineTestRunner runner(ac, av, &output, TestRegistry::getCurrentRegistry());
+		CommandLineTestRunner runner(ac, av, &output);
 		result = runner.runAllTestsMain();
 	}
 
 	if (result == 0) {
 		output << memLeakWarn.FinalReport(0);
 	}
-	TestRegistry::getCurrentRegistry()->removePluginByName(DEF_PLUGIN_MEM_LEAK);
 	return result;
 }
 
@@ -74,21 +73,21 @@ int CommandLineTestRunner::runAllTestsMain()
 	int testResult = 0;
 
 	SetPointerPlugin pPlugin(DEF_PLUGIN_SET_POINTER);
-	registry_->installPlugin(&pPlugin);
+	TestRegistry::getCurrentRegistry()->installPlugin(&pPlugin);
 
-	if (parseArguments(registry_->getFirstPlugin()))
-		testResult = runAllTests();
+	if (!parseArguments(TestRegistry::getCurrentRegistry()->getFirstPlugin())) return 1;
 
-	registry_->removePluginByName(DEF_PLUGIN_SET_POINTER);
+	testResult = runAllTests();
+
 	return testResult;
 }
 
 void CommandLineTestRunner::initializeTestRun()
 {
-	registry_->groupFilter(arguments_->getGroupFilter());
-	registry_->nameFilter(arguments_->getNameFilter());
+	TestRegistry::getCurrentRegistry()->groupFilter(arguments_->getGroupFilter());
+	TestRegistry::getCurrentRegistry()->nameFilter(arguments_->getNameFilter());
 	if (arguments_->isVerbose()) output_->verbose();
-	if (arguments_->runTestsInSeperateProcess()) registry_->setRunTestsInSeperateProcess();
+	if (arguments_->runTestsInSeperateProcess()) TestRegistry::getCurrentRegistry()->setRunTestsInSeperateProcess();
 }
 
 int CommandLineTestRunner::runAllTests()
@@ -101,7 +100,7 @@ int CommandLineTestRunner::runAllTests()
 	while (loopCount++ < repeat_) {
 		output_->printTestRun(loopCount, repeat_);
 		TestResult tr(*output_);
-		registry_->runAllTests(tr);
+		TestRegistry::getCurrentRegistry()->runAllTests(tr);
 		failureCount += tr.getFailureCount();
 	}
 
@@ -112,7 +111,7 @@ bool CommandLineTestRunner::parseArguments(TestPlugin* plugin)
 {
 	if (arguments_->parse(plugin)) {
 		if (arguments_->isJUnitOutput()) {
-			output_ = jUnitOutput_ = new JUnitTestOutput;
+			output_ = jUnitOutput_;
 		}
 		return true;
 	}

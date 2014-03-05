@@ -25,63 +25,27 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "CppUTest/CppUTestConfig.h"
-#include "CppUTest/Utest.h"
-#include "CppUTest/UtestMacros.h"
-#include "CppUTest/PlatformSpecificFunctions_c.h"
 #include "CppUTestExt/MockSupport.h"
-#include "CppUTestExt/MockSupport_c.h"
-
-class MockFailureReporterTestTerminatorForInCOnlyCode : public TestTerminatorWithoutExceptions
-{
-public:
-	MockFailureReporterTestTerminatorForInCOnlyCode(bool crashOnFailure) : crashOnFailure_(crashOnFailure)
-	{
-	}
-
-	virtual void exitCurrentTest() const
-	{
-		if (crashOnFailure_)
-			UT_CRASH();
-
-		TestTerminatorWithoutExceptions::exitCurrentTest();
-	}
-
-	virtual ~MockFailureReporterTestTerminatorForInCOnlyCode()
-	{
-	}
-private:
-	bool crashOnFailure_;
-
-};
-
-class MockFailureReporterForInCOnlyCode : public MockFailureReporter
-{
-public:
-	void failTest(const MockFailure& failure)
-	{
-		if (!getTestToFail()->hasFailed())
-			getTestToFail()->failWith(failure, MockFailureReporterTestTerminatorForInCOnlyCode(crashOnFailure_));
-	}
-
-};
+extern "C" {
+	#include "CppUTestExt/MockSupport_c.h"
+}
+#include <string.h>
 
 static MockSupport* currentMockSupport = NULL;
 static MockFunctionCall* currentCall = NULL;
-static MockFailureReporterForInCOnlyCode failureReporterForC;
 
 class MockCFunctionComparatorNode : public MockNamedValueComparator
 {
 public:
 	MockCFunctionComparatorNode(MockCFunctionComparatorNode* next, MockTypeEqualFunction_c equal, MockTypeValueToStringFunction_c toString)
 		: next_(next), equal_(equal), toString_(toString) {}
-	virtual ~MockCFunctionComparatorNode() {}
+	virtual ~MockCFunctionComparatorNode() {};
 
-	virtual bool isEqual(const void* object1, const void* object2)
+	virtual bool isEqual(void* object1, void* object2)
 	{
 		return equal_(object1, object2) != 0;
 	}
-	virtual SimpleString valueToString(const void* object)
+	virtual SimpleString valueToString(void* object)
 	{
 		return SimpleString(toString_(object));
 	}
@@ -97,8 +61,6 @@ extern "C" {
 
 MockFunctionCall_c* expectOneCall_c(const char* name);
 MockFunctionCall_c* actualCall_c(const char* name);
-void disable_c(void);
-void enable_c(void);
 void setIntData_c(const char* name, int value);
 void setDoubleData_c(const char* name, double value);
 void setStringData_c(const char* name, const char* value);
@@ -122,13 +84,13 @@ MockFunctionCall_c* andReturnPointerValue_c(void* value);
 MockValue_c returnValue_c();
 
 
-static void installComparator_c (const char* typeName, MockTypeEqualFunction_c isEqual, MockTypeValueToStringFunction_c valueToString)
+void installComparator_c (const char* typeName, MockTypeEqualFunction_c isEqual, MockTypeValueToStringFunction_c valueToString)
 {
 	comparatorList_ = new MockCFunctionComparatorNode(comparatorList_, isEqual, valueToString);
 	currentMockSupport->installComparator(typeName, *comparatorList_);
 }
 
-static void removeAllComparators_c()
+void removeAllComparators_c()
 {
 	while (comparatorList_) {
 		MockCFunctionComparatorNode *next = comparatorList_->next_;
@@ -155,8 +117,6 @@ static MockSupport_c gMockSupport = {
 		expectOneCall_c,
 		actualCall_c,
 		returnValue_c,
-		enable_c,
-		disable_c,
 		setIntData_c,
 		setDoubleData_c,
 		setStringData_c,
@@ -227,19 +187,19 @@ MockFunctionCall_c* andReturnPointerValue_c(void* value)
 static MockValue_c getMockValueCFromNamedValue(const MockNamedValue& namedValue)
 {
 	MockValue_c returnValue;
-	if (PlatformSpecificStrCmp(namedValue.getType().asCharString(), "int") == 0) {
+	if (strcmp(namedValue.getType().asCharString(), "int") == 0) {
 		returnValue.type = MOCKVALUETYPE_INTEGER;
 		returnValue.value.intValue = namedValue.getIntValue();
 	}
-	else if (PlatformSpecificStrCmp(namedValue.getType().asCharString(), "double") == 0) {
+	else if (strcmp(namedValue.getType().asCharString(), "double") == 0) {
 		returnValue.type = MOCKVALUETYPE_DOUBLE;
 		returnValue.value.doubleValue = namedValue.getDoubleValue();
 	}
-	else if (PlatformSpecificStrCmp(namedValue.getType().asCharString(), "char*") == 0) {
+	else if (strcmp(namedValue.getType().asCharString(), "char*") == 0) {
 		returnValue.type = MOCKVALUETYPE_STRING;
 		returnValue.value.stringValue = namedValue.getStringValue();
 	}
-	else if (PlatformSpecificStrCmp(namedValue.getType().asCharString(), "void*") == 0) {
+	else if (strcmp(namedValue.getType().asCharString(), "void*") == 0) {
 		returnValue.type = MOCKVALUETYPE_POINTER;
 		returnValue.value.pointerValue = namedValue.getPointerValue();
 	}
@@ -265,16 +225,6 @@ MockFunctionCall_c* actualCall_c(const char* name)
 {
 	currentCall = &currentMockSupport->actualCall(name);
 	return &gFunctionCall;
-}
-
-void disable_c(void)
-{
-	currentMockSupport->disable();
-}
-
-void enable_c(void)
-{
-	currentMockSupport->enable();
 }
 
 void setIntData_c(const char* name, int value)
@@ -324,13 +274,13 @@ void clear_c()
 
 MockSupport_c* mock_c()
 {
-	currentMockSupport = &mock("", &failureReporterForC);
+	currentMockSupport = &mock();
 	return &gMockSupport;
 }
 
 MockSupport_c* mock_scope_c(const char* scope)
 {
-	currentMockSupport = &mock(scope, &failureReporterForC);
+	currentMockSupport = &mock(scope);
 	return &gMockSupport;
 }
 

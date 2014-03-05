@@ -28,9 +28,6 @@
 #ifndef D_TestTestingFixture_H
 #define D_TestTestingFixture_H
 
-#include "TestRegistry.h"
-#include "TestOutput.h"
-
 class TestTestingFixture
 {
 public:
@@ -45,6 +42,7 @@ public:
 		registry_->setCurrentRegistry(registry_);
 		registry_->addTest(genTest_);
 	}
+	;
 
 	virtual ~TestTestingFixture()
 	{
@@ -80,12 +78,6 @@ public:
 		return result_->getFailureCount();
 	}
 
-	bool hasTestFailed()
-	{
-		return genTest_->hasFailed();
-	}
-
-
 	void assertPrintContains(const SimpleString& contains)
 	{
 		assertPrintContains(output_, contains);
@@ -94,7 +86,14 @@ public:
 	static void assertPrintContains(StringBufferTestOutput* output,
 			const SimpleString& contains)
 	{
-		STRCMP_CONTAINS(contains.asCharString(), output->getOutput().asCharString());
+		if (output->getOutput().contains(contains)) return;
+		SimpleString message("\tActual <");
+		message += output->getOutput().asCharString();
+		message += ">\n";
+		message += "\tdid not contain <";
+		message += contains.asCharString();
+		message += ">\n";
+		FAIL(message.asCharString());
 
 	}
 
@@ -102,20 +101,6 @@ public:
 	ExecFunctionTestShell* genTest_;
 	StringBufferTestOutput* output_;
 	TestResult * result_;
-};
-
-class SetBooleanOnDestructorCall
-{
-	bool& booleanToSet_;
-public:
-	SetBooleanOnDestructorCall(bool& booleanToSet) : booleanToSet_(booleanToSet)
-	{
-	}
-
-	virtual ~SetBooleanOnDestructorCall()
-	{
-		booleanToSet_ = true;
-	}
 };
 
 #endif

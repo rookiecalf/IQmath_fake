@@ -28,15 +28,7 @@
 #ifndef __TestMockSupportc_CFile__h
 #define __TestMockSupportc_CFile__h
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-extern void all_mock_support_c_calls(void);
-
-#ifdef __cplusplus
-}
-#endif
+extern void all_mock_support_c_calls();
 
 #endif
 

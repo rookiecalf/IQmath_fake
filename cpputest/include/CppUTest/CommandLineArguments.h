@@ -80,4 +80,4 @@ private:
 
 };
 
-#endif
+#endif  // D_CommandLineArguments_H

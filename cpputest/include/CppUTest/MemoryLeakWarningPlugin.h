@@ -29,10 +29,51 @@
 #define D_MemoryLeakWarningPlugin_h
 
 #include "TestPlugin.h"
-#include "MemoryLeakDetectorNewMacros.h"
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  MemoryLeakWarning.h
+//
+//  MemoryLeakWarning defines the inteface to a platform specific
+//  memory leak detection class.  See Platforms directory for examples
+//
+///////////////////////////////////////////////////////////////////////////////
 
 #define IGNORE_ALL_LEAKS_IN_TEST() MemoryLeakWarningPlugin::getFirstPlugin()->ignoreAllLeaksInTest();
 #define EXPECT_N_LEAKS(n)          MemoryLeakWarningPlugin::getFirstPlugin()->expectLeaksInTest(n);
+
+extern "C" { /* include for size_t definition */
+#include "TestHarness_c.h"
+}
+
+#if CPPUTEST_USE_MEM_LEAK_DETECTION
+
+#undef new
+
+#if CPPUTEST_USE_STD_CPP_LIB
+
+#include <new>
+void* operator new(size_t size) throw(std::bad_alloc);
+void* operator new[](size_t size) throw(std::bad_alloc);
+void* operator new(size_t size, const std::nothrow_t&) throw();
+void* operator new[](size_t size, const std::nothrow_t&) throw();
+void operator delete(void* mem) throw();
+void operator delete[](void* mem) throw();
+
+#else
+
+void* operator new(size_t size);
+void* operator new[](size_t size);
+void operator delete(void* mem);
+void operator delete[](void* mem);
+
+#endif
+
+#if CPPUTEST_USE_NEW_MACROS
+#include "MemoryLeakDetectorNewMacros.h"
+#endif
+
+#endif
 
 extern void crash_on_allocation_number(unsigned alloc_number);
 
@@ -42,7 +83,8 @@ class MemoryLeakFailure;
 class MemoryLeakWarningPlugin: public TestPlugin
 {
 public:
-	MemoryLeakWarningPlugin(const SimpleString& name, MemoryLeakDetector* localDetector = 0);
+	MemoryLeakWarningPlugin(const SimpleString& name,
+			MemoryLeakDetector* localDetector = 0);
 	virtual ~MemoryLeakWarningPlugin();
 
 	virtual void preTestAction(UtestShell& test, TestResult& result);
@@ -75,9 +117,5 @@ private:
 
 	static MemoryLeakWarningPlugin* firstPlugin_;
 };
-
-extern void* cpputest_malloc_location_with_leak_detection(size_t size, const char* file, int line);
-extern void* cpputest_realloc_location_with_leak_detection(void* memory, size_t size, const char* file, int line);
-extern void cpputest_free_location_with_leak_detection(void* buffer, const char* file, int line);
 
 #endif

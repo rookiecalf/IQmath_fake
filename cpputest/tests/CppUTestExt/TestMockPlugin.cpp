@@ -42,7 +42,7 @@ TEST_GROUP(MockPlugin)
 
 	void setup()
 	{
-		mock().setMockFailureStandardReporter(MockFailureReporterForTest::getReporter());
+		mock().setMockFailureReporter(MockFailureReporterForTest::getReporter());
 
 		test = new UtestShell("group", "name", "file", 1);
 		output = new StringBufferTestOutput;
@@ -63,7 +63,7 @@ TEST_GROUP(MockPlugin)
 		delete plugin;
 
 		CHECK_NO_MOCK_FAILURE();
-		mock().setMockFailureStandardReporter(NULL);
+		mock().setMockFailureReporter(NULL);
 	}
 };
 
@@ -97,11 +97,11 @@ TEST(MockPlugin, checkExpectationsWorksAlsoWithHierachicalObjects)
 class DummyComparator : public MockNamedValueComparator
 {
 public:
-	bool isEqual(const void* object1, const void* object2)
+	bool isEqual(void* object1, void* object2)
 	{
 		return object1 == object2;
 	}
-	SimpleString valueToString(const void*)
+	SimpleString valueToString(void*)
 	{
 		return "string";
 	}

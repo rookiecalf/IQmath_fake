@@ -37,7 +37,6 @@ class TestResult;
 class TestPlugin;
 class TestFailure;
 class TestFilter;
-class TestTerminator;
 
 extern bool doubles_equal(double d1, double d2, double threshold);
 
@@ -57,39 +56,17 @@ public:
 	virtual void testBody();
 };
 
-//////////////////// TestTerminator
-
-class TestTerminator
-{
-public:
-	virtual void exitCurrentTest() const=0;
-	virtual ~TestTerminator();
-};
-
-class NormalTestTerminator : public TestTerminator
-{
-public:
-	virtual void exitCurrentTest() const;
-	virtual ~NormalTestTerminator();
-};
-
-class TestTerminatorWithoutExceptions  : public TestTerminator
-{
-public:
-	virtual void exitCurrentTest() const;
-	virtual ~TestTerminatorWithoutExceptions();
-};
-
 //////////////////// UtestShell
 
 class UtestShell
 {
 public:
-    static UtestShell *getCurrent();
-
-public:
-	UtestShell(const char* groupName, const char* testName, const char* fileName, int lineNumber);
+	UtestShell(const char* groupName, const char* testName, const char* fileName,
+			int lineNumber);
 	virtual ~UtestShell();
+
+	virtual void runOneTestWithPlugins(TestPlugin* plugin, TestResult& result);
+	virtual SimpleString getFormattedName() const;
 
 	virtual UtestShell* addTest(UtestShell* test);
 	virtual UtestShell *getNext() const;
@@ -99,23 +76,22 @@ public:
 	bool shouldRun(const TestFilter& groupFilter, const TestFilter& nameFilter) const;
 	const SimpleString getName() const;
 	const SimpleString getGroup() const;
-	virtual SimpleString getFormattedName() const;
 	const SimpleString getFile() const;
 	int getLineNumber() const;
     virtual const char *getProgressIndicator() const;
-    virtual bool hasFailed() const;
 
-    virtual void assertTrue(bool condition, const char *checkString, const char *conditionString, const char *fileName, int lineNumber, const TestTerminator& testTerminator = NormalTestTerminator());
-    virtual void assertTrueText(bool condition, const char *checkString, const char *conditionString, const char* text, const char *fileName, int lineNumber, const TestTerminator& testTerminator = NormalTestTerminator());
-    virtual void assertCstrEqual(const char *expected, const char *actual, const char *fileName, int lineNumber, const TestTerminator& testTerminator = NormalTestTerminator());
+	static TestResult *getTestResult();
+    static UtestShell *getCurrent();
+
+    virtual void assertTrue(bool condition, const char *checkString, const char *conditionString, const char *fileName, int lineNumber);
+    virtual void assertCstrEqual(const char *expected, const char *actual, const char *fileName, int lineNumber);
     virtual void assertCstrNoCaseEqual(const char *expected, const char *actual, const char *fileName, int lineNumber);
     virtual void assertCstrContains(const char *expected, const char *actual, const char *fileName, int lineNumber);
     virtual void assertCstrNoCaseContains(const char *expected, const char *actual, const char *fileName, int lineNumber);
-    virtual void assertLongsEqual(long  expected, long  actual, const char *fileName, int lineNumber, const TestTerminator& testTerminator = NormalTestTerminator());
+    virtual void assertLongsEqual(long  expected, long  actual, const char *fileName, int lineNumber);
     virtual void assertPointersEqual(const void *expected, const void *actual, const char *fileName, int lineNumber);
-    virtual void assertDoublesEqual(double expected, double actual, double threshold, const char *fileName, int lineNumber, const TestTerminator& testTerminator = NormalTestTerminator());
-    virtual void assertEquals(bool failed, const char* expected, const char* actual, const char* file, int line, const TestTerminator& testTerminator = NormalTestTerminator());
-    virtual void fail(const char *text, const char *fileName, int lineNumber, const TestTerminator& testTerminator = NormalTestTerminator());
+    virtual void assertDoublesEqual(double expected, double actual, double threshold, const char *fileName, int lineNumber);
+    virtual void fail(const char *text, const char *fileName, int lineNumber);
 
     virtual void print(const char *text, const char *fileName, int lineNumber);
     virtual void print(const SimpleString & text, const char *fileName, int lineNumber);
@@ -124,6 +100,9 @@ public:
     void setLineNumber(int lineNumber);
     void setGroupName(const char *groupName);
     void setTestName(const char *testName);
+
+    virtual void exitCurrentTest();
+    virtual void exitCurrentTestWithoutException();
 
     static void crash();
     static void setCrashMethod(void (*crashme)());
@@ -135,18 +114,12 @@ public:
     virtual Utest* createTest();
     virtual void destroyTest(Utest* test);
 
-	virtual void runOneTest(TestPlugin* plugin, TestResult& result);
-    virtual void runOneTestInCurrentProcess(TestPlugin *plugin, TestResult & result);
-
-    virtual void failWith(const TestFailure& failure);
-    virtual void failWith(const TestFailure& failure, const TestTerminator& terminator);
-
+    virtual void runOneTest(TestPlugin *plugin, TestResult & result);
 protected:
     UtestShell();
     UtestShell(const char *groupName, const char *testName, const char *fileName, int lineNumber, UtestShell *nextTest);
 
     virtual SimpleString getMacroName() const;
-	TestResult *getTestResult();
 private:
     const char *group_;
     const char *name_;
@@ -154,7 +127,6 @@ private:
     int lineNumber_;
     UtestShell *next_;
     bool isRunAsSeperateProcess_;
-    bool hasFailed_;
 
     void setTestResult(TestResult* result);
 	void setCurrentTest(UtestShell* test);
@@ -162,6 +134,7 @@ private:
 	static UtestShell* currentTest_;
 	static TestResult* testResult_;
 
+    void failWith(const TestFailure& failure);
 };
 
 //////////////////// NullTest
@@ -186,6 +159,7 @@ private:
 	NullTestShell& operator=(const NullTestShell&);
 
 };
+
 
 //////////////////// ExecFunctionTest
 
@@ -216,8 +190,7 @@ public:
 				tear), testFunction_(0)
 	{
 	}
-	Utest* createTest() { return new ExecFunctionTest(this); }
-	virtual ~ExecFunctionTestShell();
+	Utest* createTest() { return new ExecFunctionTest(this); };
 };
 
 //////////////////// CppUTestFailedException
