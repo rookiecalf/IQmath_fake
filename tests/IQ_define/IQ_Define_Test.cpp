@@ -16,7 +16,7 @@
 //-    www.renaissancesoftware.net james@renaissancesoftware.net      
 //- ------------------------------------------------------------------
 //测试travis ci 持续集成
-//再次测试trello项目管理功能
+//测试trello项目管理功能
 
 #include "CppUTest/TestHarness.h"
 
