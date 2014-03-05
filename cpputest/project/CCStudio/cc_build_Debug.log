@@ -1,0 +1,67 @@
+----------------------------  CppUTest.pjt - Debug  ----------------------------
+[CommandLineArguments.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "CommandLineArguments.cpp"
+
+[CommandLineTestRunner.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "CommandLineTestRunner.cpp"
+
+[JUnitTestOutput.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "JUnitTestOutput.cpp"
+
+[MemoryLeakDetector.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MemoryLeakDetector.cpp"
+
+[MemoryLeakWarningPlugin.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MemoryLeakWarningPlugin.cpp"
+
+[SimpleString.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "SimpleString.cpp"
+
+[TestFailure.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "TestFailure.cpp"
+
+[TestFilter.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "TestFilter.cpp"
+
+[TestHarness_c.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "TestHarness_c.cpp"
+
+[TestMemoryAllocator.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "TestMemoryAllocator.cpp"
+
+[TestOutput.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "TestOutput.cpp"
+
+[TestPlugin.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "TestPlugin.cpp"
+
+[TestRegistry.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "TestRegistry.cpp"
+
+[TestResult.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "TestResult.cpp"
+
+[Utest.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "Utest.cpp"
+
+[CodeMemoryReportFormatter.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "CodeMemoryReportFormatter.cpp"
+
+[MemoryReportAllocator.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MemoryReportAllocator.cpp"
+
+[MemoryReporterPlugin.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MemoryReporterPlugin.cpp"
+
+[MemoryReportFormatter.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MemoryReportFormatter.cpp"
+
+[MockActualFunctionCall.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MockActualFunctionCall.cpp"
+
+[MockExpectedFunctionCall.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MockExpectedFunctionCall.cpp"
+
+[MockExpectedFunctionsList.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MockExpectedFunctionsList.cpp"
+
+[MockFailure.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MockFailure.cpp"
+
+[MockFunctionCall.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MockFunctionCall.cpp"
+
+[MockNamedValue.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MockNamedValue.cpp"
+
+[MockSupport.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MockSupport.cpp"
+
+[MockSupport_c.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MockSupport_c.cpp"
+
+[MockSupportPlugin.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "MockSupportPlugin.cpp"
+
+[OrderedTest.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../project/CCStudio/Debug.lkf" "OrderedTest.cpp"
+
+[UtestPlatform.cpp] "E:\CCStudio_v3.3\C2000\cgtools\bin\cl2000" -g -rtti -pdsw225 -pden -pds1 -fr"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/Debug" -i"E:/gitroot/IQmath_fake/cpputest/project/CCStudio/../../include" -d"_DEBUG" -d"LARGE_MODEL" -d"CPPUTEST_STD_CPP_LIB_DISABLED" -d"CPPUTEST_USE_MEM_LEAK_DETECTION" -ml -v28 -@"../../../project/CCStudio/Debug.lkf" "UtestPlatform.cpp"
+
+[Archiving...] "E:\CCStudio_v3.3\C2000\cgtools\bin\ar2000" @"Debug.lkf"
+  ==>  new archive 'E:\gitroot\IQmath_fake\cpputest\lib\c2000\CppUTestd.lib'
+  ==>  building archive 'E:\gitroot\IQmath_fake\cpputest\lib\c2000\CppUTestd.lib'
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

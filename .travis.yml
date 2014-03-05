@@ -4,4 +4,4 @@ compiler:
 - gcc
 
 # Change this to your needs
-script:  cd cpputest && ./configure && make
+script:  make
