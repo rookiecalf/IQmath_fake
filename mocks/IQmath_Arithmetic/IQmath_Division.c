@@ -13,12 +13,13 @@
 **********************************************************************/
 #include "math.h"
 
-long _IQ1div(long A, long B, int num)
+long __IQdiv(long A, long B, int num)
 {
-	A = A ;
-	B= B ;
-	num = num ;
-
-	return 3 ;
+	return ((long)(((double)A) * ((double)pow(2,num)) / ((double)B))) ;
 }
 
+
+long _IQ1div(long A, long B)
+{
+	return __IQdiv(A, B, 1) ;
+}
