@@ -42,9 +42,21 @@ TEST(IQmath_Multiplication, IQ1mpy)
     LONGS_EQUAL(_IQ1(1073741823), _IQ1mpy(_IQ1(2.0), _IQ1(536870911.5))) ;
 }
 
+TEST(IQmath_Multiplication, IQ1mpyNegative)
+{
+    LONGS_EQUAL(_IQ1(-3.0), _IQ1mpy(_IQ1(2.0), _IQ1(-1.5))) ;
+    LONGS_EQUAL(_IQ1(-1073741823), _IQ1mpy(_IQ1(2.0), _IQ1(-536870911.5))) ;
+}
+
 TEST(IQmath_Multiplication, IQ30mpy)
 {
     LONGS_EQUAL(_IQ30(0.75), _IQ30mpy(_IQ30(1.5), _IQ30(0.5))) ;
     LONGS_EQUAL(_IQ30(0.999999998), _IQ30mpy(_IQ30(0.666666666), _IQ30(1.5))) ;
+}
+
+TEST(IQmath_Multiplication, IQ30mpyNegative)
+{
+    LONGS_EQUAL(_IQ30(0.75), _IQ30mpy(_IQ30(-1.5), _IQ30(-0.5))) ;
+    LONGS_EQUAL(_IQ30(-0.999999998), _IQ30mpy(_IQ30(-0.666666666), _IQ30(1.5))) ;
 }
 
