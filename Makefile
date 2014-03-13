@@ -30,12 +30,15 @@ SRC_DIRS = \
 TEST_SRC_DIRS = \
 	tests\
 	mocks\
+	mocks/IQmath_Arithmetic\
 	tests/IQmath_DataType\
+	tests/IQmath_Arithmetic\
 	
 INCLUDE_DIRS =\
   $(CPPUTEST_HOME)/include/\
   include/IQmath\
   include/*\
+  mocks/include\
 
   
 
