@@ -23,3 +23,8 @@ long _IQ1div(long A, long B)
 {
 	return __IQdiv(A, B, 1) ;
 }
+
+long _IQ2div(long A, long B)
+{
+	return __IQdiv(A, B, 2) ;
+}

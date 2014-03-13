@@ -47,3 +47,9 @@ TEST(IQmath_Division, IQ1divNegative)
     LONGS_EQUAL(_IQ1(-536870911.5), _IQ1div(_IQ1(-1073741823), _IQ1(2.0))) ;
 }
 
+TEST(IQmath_Division, IQ2div)
+{
+    LONGS_EQUAL(_IQ2(1.5), _IQ2div(_IQ2(3.0), _IQ2(2.0))) ;
+    LONGS_EQUAL(_IQ2(16268815.48), _IQ2div(_IQ2(536870911), _IQ2(33))) ;
+}
+
