@@ -13,12 +13,22 @@
 **********************************************************************/
 #include "math.h"
 
-long _IQ1sin(long A)
+long __IQsin(long A, int num)
 {
 	double quotient ;
 
-	quotient = ((double) A) / ((double)2.0) ;
+	quotient = ((double)A) / ((double)pow(2, num)) ;
 
-	return ((long)(sin(quotient) * 2.0));
+	return ((long)(sin(quotient) * pow(2, num)));
+}
+
+long _IQ1sin(long A)
+{
+	return __IQsin(A, 1) ;
+}
+
+long _IQ2sin(long A)
+{
+	return __IQsin(A, 2) ;
 }
 
