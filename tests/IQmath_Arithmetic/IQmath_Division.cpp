@@ -17,7 +17,6 @@
 extern "C"
 {
 	#include "IQmathLib.h"
-    //#include "IQmath_Division.h"
 }
 
 TEST_GROUP(IQmath_Division)
