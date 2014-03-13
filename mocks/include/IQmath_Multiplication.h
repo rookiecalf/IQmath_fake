@@ -11,7 +11,9 @@
 //-                                                                   
 //-    softci.com    rookiecalf@gmail.com      
 **********************************************************************/
+#ifndef IQMATH_MULTIPLICATION_H_
+#define IQMATH_MULTIPLICATION_H_
 
 extern long __IQmpy(long A, long B, int num) ;
 
-
+#endif /* IQMATH_MULTIPLICATION_H_ */
