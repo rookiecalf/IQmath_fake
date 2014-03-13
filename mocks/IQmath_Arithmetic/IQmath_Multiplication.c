@@ -11,13 +11,10 @@
 //-                                                                   
 //-    softci.com    rookiecalf@gmail.com      
 **********************************************************************/
+#include "math.h"
 
 long __IQmpy(long A, long B, int num)
 {
-	A=A;
-	B=B;
-
-	num = num ;
-	return 6 ;
+	return ((long)(((double)A) * ((double)B) / ((double) pow(2, num)))) ;
 }
 

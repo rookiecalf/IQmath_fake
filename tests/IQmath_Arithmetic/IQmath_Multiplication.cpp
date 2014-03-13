@@ -39,5 +39,6 @@ TEST_GROUP(IQmath_Multiplication)
 TEST(IQmath_Multiplication, IQ1mpy)
 {
     LONGS_EQUAL(_IQ1(3.0), _IQ1mpy(_IQ1(2.0), _IQ1(1.5))) ;
+    LONGS_EQUAL(_IQ1(1073741823), _IQ1mpy(_IQ1(2.0), _IQ1(536870911.5))) ;
 }
 
