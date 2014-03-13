@@ -30,7 +30,7 @@ SRC_DIRS = \
 TEST_SRC_DIRS = \
 	tests\
 	mocks\
-	tests/IQ_define\
+	tests/IQmath_DataType\
 	
 INCLUDE_DIRS =\
   $(CPPUTEST_HOME)/include/\
