@@ -15,7 +15,10 @@
 
 long _IQ1sin(long A)
 {
-	A = A ; 
-	return 2 ;
+	double quotient ;
+
+	quotient = ((double) A) / ((double)2.0) ;
+
+	return ((long)(sin(quotient) * 2.0));
 }
 
