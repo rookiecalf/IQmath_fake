@@ -1,4 +1,4 @@
-//- ------------------------------------------------------------------
+/**********************************************************************
 //-    Copyright (c) Changjiang. Liu -- All Rights Reserved         
 //-    Licensed under the Apache License, Version 2.0 (the "License").   
 //-                                                                  
@@ -10,33 +10,21 @@
 //-    fit for any purpose.                                           
 //-                                                                   
 //-    softci.com    rookiecalf@gmail.com      
-//- ------------------------------------------------------------------
+**********************************************************************/
+#include "math.h"
 
-#include "CppUTest/TestHarness.h"
-
-extern "C"
+long _IQ1frac(long A)
 {
-	#include "IQmathLib.h"
+	long integer ;
+	long integerPart ;
+	long divisor ;
+
+	divisor = (long) pow(2, 1) ;
+	integer = A/divisor ;
+
+	integerPart = integer * divisor ;
+
+	return (A - integerPart);
 }
 
-TEST_GROUP(IQmath_ExtractFraction)
-{
-    void setup()
-    {
-       
-    }
 
-    void teardown()
-    {
- 
-    }
-
- 
-};
-
-
-TEST(IQmath_ExtractFraction, IQ1frac)
-{
-    LONGS_EQUAL(_IQ1(0.5), _IQ1frac(_IQ1(3.5))) ;
-    LONGS_EQUAL(_IQ1(0.5), _IQ1frac(_IQ1(1073741823.5))) ;
-}
