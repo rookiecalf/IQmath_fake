@@ -32,6 +32,7 @@ TEST_SRC_DIRS = \
 	mocks\
 	mocks/IQmath_Arithmetic\
 	mocks/IQmath_Trigonometric\
+	mocks/IQmath_FormatConversion\
 	tests/IQmath_DataType\
 	tests/IQmath_Arithmetic\
 	tests/IQmath_Trigonometric\
