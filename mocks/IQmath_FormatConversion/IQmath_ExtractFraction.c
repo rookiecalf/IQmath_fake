@@ -13,13 +13,13 @@
 **********************************************************************/
 #include "math.h"
 
-long _IQ1frac(long A)
+long __IQfrac(long A, int num)
 {
 	long integer ;
 	long integerPart ;
 	long divisor ;
 
-	divisor = (long) pow(2, 1) ;
+	divisor = (long) pow(2, num) ;
 	integer = A/divisor ;
 
 	integerPart = integer * divisor ;
@@ -27,4 +27,12 @@ long _IQ1frac(long A)
 	return (A - integerPart);
 }
 
+long _IQ1frac(long A)
+{
+	return __IQfrac(A, 1) ;
+}
 
+long _IQ2frac(long A)
+{
+	return __IQfrac(A, 2) ;
+}

@@ -39,4 +39,11 @@ TEST(IQmath_ExtractFraction, IQ1frac)
 {
     LONGS_EQUAL(_IQ1(0.5), _IQ1frac(_IQ1(3.5))) ;
     LONGS_EQUAL(_IQ1(0.5), _IQ1frac(_IQ1(1073741823.5))) ;
+    LONGS_EQUAL(_IQ1(-0.5), _IQ1frac(_IQ1(-1073741823.5))) ;
+}
+
+TEST(IQmath_ExtractFraction, IQ2frac)
+{
+    LONGS_EQUAL(_IQ2(0.75), _IQ2frac(_IQ2(536870911.75))) ;
+    LONGS_EQUAL(_IQ2(-0.75), _IQ2frac(_IQ2(-536870911.75))) ;
 }
