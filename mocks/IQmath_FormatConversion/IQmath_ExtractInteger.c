@@ -15,7 +15,6 @@
 
 long _IQ1int(long A)
 {
-	A=A ;
-	return 2 ;
+	return (A/2) ;
 }
 

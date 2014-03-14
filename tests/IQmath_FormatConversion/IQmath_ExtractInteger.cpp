@@ -38,6 +38,9 @@ TEST_GROUP(IQmath_ExtractInteger)
 TEST(IQmath_ExtractInteger, IQ1int)
 {
     LONGS_EQUAL(2, _IQ1int(_IQ1(2.159))) ;
+    LONGS_EQUAL(0, _IQ1int(_IQ1(0))) ;
+    LONGS_EQUAL(1073741823, _IQ1int(_IQ1(1073741823.5))) ;
+    LONGS_EQUAL(-1073741823, _IQ1int(_IQ1(-1073741823.5))) ;
 }
 
 
