@@ -13,8 +13,21 @@
 **********************************************************************/
 #include "math.h"
 
-long _IQ1int(long A)
+long __IQint(long A, int num)
 {
-	return (A/2) ;
+	long divisor ;
+
+	divisor = (long) pow(2, num) ;
+
+	return (A/divisor) ;
 }
 
+long _IQ1int(long A)
+{
+	return __IQint(A, 1) ;
+}
+
+long _IQ2int(long A)
+{
+	return __IQint(A, 2) ;
+}
