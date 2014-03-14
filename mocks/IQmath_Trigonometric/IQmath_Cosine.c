@@ -13,9 +13,117 @@
 **********************************************************************/
 #include "math.h"
 
-long _IQ1cos(long A)
+long __IQcos(long A, int num)
 {
-	A=A ;
-	return 0 ;
+	double quotient ;
+
+	quotient =((double)A) / ((double) pow(2, num)) ;
+
+	return ((long) (cos(quotient) * pow(2, num))) ;
 }
 
+long _IQ1cos(long A)
+{
+	return __IQcos(A, 1) ;
+}
+
+long _IQ2cos(long A)
+{
+	return __IQcos(A, 2) ;
+}
+
+
+long _IQ3cos(long A)
+{
+	return __IQcos(A, 3) ;
+}
+
+long _IQ4cos(long A)
+{
+	return __IQcos(A, 4) ;
+}
+
+long _IQ5cos(long A)
+{
+	return __IQcos(A, 5) ;
+}
+
+long _IQ6cos(long A)
+{
+	return __IQcos(A, 6) ;
+}
+
+long _IQ7cos(long A)
+{
+	return __IQcos(A, 7) ;
+}
+
+long _IQ8cos(long A)
+{
+	return __IQcos(A, 8) ;
+}
+
+long _IQ9cos(long A)
+{
+	return __IQcos(A, 9) ;
+}
+
+long _IQ10cos(long A)
+{
+	return __IQcos(A, 10) ;
+}
+
+long _IQ11cos(long A)
+{
+	return __IQcos(A, 11) ;
+}
+
+long _IQ12cos(long A)
+{
+	return __IQcos(A, 12) ;
+}
+
+long _IQ13cos(long A)
+{
+	return __IQcos(A, 13) ;
+}
+
+long _IQ14cos(long A)
+{
+	return __IQcos(A, 14) ;
+}
+
+long _IQ15cos(long A)
+{
+	return __IQcos(A, 15) ;
+}
+
+long _IQ16cos(long A)
+{
+	return __IQcos(A, 16) ;
+}
+
+long _IQ17cos(long A)
+{
+	return __IQcos(A, 17) ;
+}
+
+long _IQ18cos(long A)
+{
+	return __IQcos(A, 18) ;
+}
+
+long _IQ19cos(long A)
+{
+	return __IQcos(A, 19) ;
+}
+
+long _IQ20cos(long A)
+{
+	return __IQcos(A, 20) ;
+}
+
+long _IQ21cos(long A)
+{
+	return __IQcos(A, 21) ;
+}
