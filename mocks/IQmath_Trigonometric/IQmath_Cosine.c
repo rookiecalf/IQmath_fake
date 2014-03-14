@@ -127,3 +127,43 @@ long _IQ21cos(long A)
 {
 	return __IQcos(A, 21) ;
 }
+
+long _IQ22cos(long A)
+{
+	return __IQcos(A, 22) ;
+}
+
+long _IQ23cos(long A)
+{
+	return __IQcos(A, 23) ;
+}
+
+long _IQ24cos(long A)
+{
+	return __IQcos(A, 24) ;
+}
+
+long _IQ25cos(long A)
+{
+	return __IQcos(A, 25) ;
+}
+
+long _IQ26cos(long A)
+{
+	return __IQcos(A, 26) ;
+}
+
+long _IQ27cos(long A)
+{
+	return __IQcos(A, 27) ;
+}
+
+long _IQ28cos(long A)
+{
+	return __IQcos(A, 28) ;
+}
+
+long _IQ29cos(long A)
+{
+	return __IQcos(A, 29) ;
+}
