@@ -38,6 +38,7 @@ TEST_GROUP(IQmath_Exponentiation)
 TEST(IQmath_Exponentiation, IQ1exp)
 {
     LONGS_EQUAL(_IQ1(2.25), _IQ1exp(_IQ1(1.5))) ;
+	LONGS_EQUAL(_IQ1(6.25), _IQ1exp(_IQ1(2.5))) ;
 }
 
 

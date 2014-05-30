@@ -15,7 +15,6 @@
 
 long _IQ1exp(long A)
 {
-	A = A ;
-	return 4 ;
+	return ((long)(((double)pow((double)A,2))/(2))) ;
 }
 
