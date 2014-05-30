@@ -169,7 +169,7 @@ endif
 # Default warnings
 ifndef CPPUTEST_WARNINGFLAGS
 ifeq ($(CPPUTEST_USE_REAL_GTEST), N)
-	CPPUTEST_WARNINGFLAGS =  -Wall -Wextra -Werror -Wshadow -Wswitch-default -Wswitch-enum -Wconversion
+	CPPUTEST_WARNINGFLAGS =  -Wall -Wextra -Werror -Wshadow -Wswitch-default -Wswitch-enum
 ifeq ($(CPPUTEST_PEDANTIC_ERRORS), Y)
 	CPPUTEST_WARNINGFLAGS += -pedantic-errors
 endif 
@@ -298,6 +298,7 @@ CPPUTEST_LIB += $(CPPUTEST_HOME)/lib/libCppUTestExt.a
 endif
 
 LD_LIBRARIES += -lstdc++
+LD_LIBRARIES += -lm
 
 TARGET_LIB = \
     $(CPPUTEST_LIB_DIR)/lib$(COMPONENT_NAME).a

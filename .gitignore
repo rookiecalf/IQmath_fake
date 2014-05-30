@@ -17,3 +17,8 @@
 *.exe
 *.out
 *.app
+
+# Backup Files
+*.*~
+
+/IQmath_fake_tests
