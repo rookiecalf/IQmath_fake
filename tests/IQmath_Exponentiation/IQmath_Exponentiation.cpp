@@ -101,3 +101,64 @@ TEST(IQmath_Exponentiation, IQ10exp)
 	LONGS_EQUAL(_IQ10(6.25), _IQ10exp(_IQ10(-2.5))) ;
 }
 
+TEST(IQmath_Exponentiation, IQ11exp)
+{
+    LONGS_EQUAL(_IQ11(2.25), _IQ11exp(_IQ11(1.5))) ;
+	LONGS_EQUAL(_IQ11(6.25), _IQ11exp(_IQ11(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ12exp)
+{
+    LONGS_EQUAL(_IQ12(2.25), _IQ12exp(_IQ12(1.5))) ;
+	LONGS_EQUAL(_IQ12(6.25), _IQ12exp(_IQ12(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ13exp)
+{
+    LONGS_EQUAL(_IQ13(2.25), _IQ13exp(_IQ13(1.5))) ;
+	LONGS_EQUAL(_IQ13(6.25), _IQ13exp(_IQ13(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ14exp)
+{
+    LONGS_EQUAL(_IQ14(2.25), _IQ14exp(_IQ14(1.5))) ;
+	LONGS_EQUAL(_IQ14(6.25), _IQ14exp(_IQ14(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ15exp)
+{
+    LONGS_EQUAL(_IQ15(2.25), _IQ15exp(_IQ15(1.5))) ;
+	LONGS_EQUAL(_IQ15(6.25), _IQ15exp(_IQ15(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ16exp)
+{
+    LONGS_EQUAL(_IQ16(2.25), _IQ16exp(_IQ16(1.5))) ;
+	LONGS_EQUAL(_IQ16(6.25), _IQ16exp(_IQ16(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ17exp)
+{
+    LONGS_EQUAL(_IQ17(2.25), _IQ17exp(_IQ17(1.5))) ;
+	LONGS_EQUAL(_IQ17(6.25), _IQ17exp(_IQ17(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ18exp)
+{
+    LONGS_EQUAL(_IQ18(2.25), _IQ18exp(_IQ18(1.5))) ;
+	LONGS_EQUAL(_IQ18(6.25), _IQ18exp(_IQ18(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ19exp)
+{
+    LONGS_EQUAL(_IQ19(2.25), _IQ19exp(_IQ19(1.5))) ;
+	LONGS_EQUAL(_IQ19(6.25), _IQ19exp(_IQ19(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ20exp)
+{
+    LONGS_EQUAL(_IQ20(2.25), _IQ20exp(_IQ20(1.5))) ;
+	LONGS_EQUAL(_IQ20(6.25), _IQ20exp(_IQ20(-2.5))) ;
+}
+
+
