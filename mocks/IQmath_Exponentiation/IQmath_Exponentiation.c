@@ -28,3 +28,8 @@ long _IQ2exp(long A)
 	return __IQexp(A, 2) ;
 }
 
+long _IQ3exp(long A)
+{
+	return __IQexp(A, 3) ;
+}
+
