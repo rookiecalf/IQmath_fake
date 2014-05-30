@@ -59,3 +59,9 @@ TEST(IQmath_Exponentiation, IQ3exp)
 	LONGS_EQUAL(_IQ3(6.25), _IQ3exp(_IQ3(-2.5))) ;
 }
 
+TEST(IQmath_Exponentiation, IQ4exp)
+{
+    LONGS_EQUAL(_IQ4(2.25), _IQ4exp(_IQ4(1.5))) ;
+	LONGS_EQUAL(_IQ4(6.25), _IQ4exp(_IQ4(-2.5))) ;
+}
+
