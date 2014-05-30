@@ -13,8 +13,18 @@
 **********************************************************************/
 #include "math.h"
 
+long __IQexp(long A, int num)
+{
+	return ((long)(((double)pow((double)A,2))/((double)pow(2, num)))) ;
+}
+
 long _IQ1exp(long A)
 {
-	return ((long)(((double)pow((double)A,2))/(2))) ;
+	return __IQexp(A, 1) ;
+}
+
+long _IQ2exp(long A)
+{
+	return __IQexp(A, 2) ;
 }
 

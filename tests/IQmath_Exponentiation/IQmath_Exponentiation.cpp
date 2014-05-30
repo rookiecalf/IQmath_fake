@@ -47,4 +47,9 @@ TEST(IQmath_Exponentiation, IQ1expNegative)
 	LONGS_EQUAL(_IQ1(6.25), _IQ1exp(_IQ1(-2.5))) ;
 }
 
+TEST(IQmath_Exponentiation, IQ2exp)
+{
+    LONGS_EQUAL(_IQ2(2.25), _IQ2exp(_IQ2(1.5))) ;
+	LONGS_EQUAL(_IQ2(6.25), _IQ2exp(_IQ2(2.5))) ;
+}
 
