@@ -118,3 +118,53 @@ long _IQ20exp(long A)
 	return __IQexp(A, 20) ;
 }
 
+long _IQ21exp(long A)
+{
+	return __IQexp(A, 21) ;
+}
+
+long _IQ22exp(long A)
+{
+	return __IQexp(A, 22) ;
+}
+
+long _IQ23exp(long A)
+{
+	return __IQexp(A, 23) ;
+}
+
+long _IQ24exp(long A)
+{
+	return __IQexp(A, 24) ;
+}
+
+long _IQ25exp(long A)
+{
+	return __IQexp(A, 25) ;
+}
+
+long _IQ26exp(long A)
+{
+	return __IQexp(A, 26) ;
+}
+
+long _IQ27exp(long A)
+{
+	return __IQexp(A, 27) ;
+}
+
+long _IQ28exp(long A)
+{
+	return __IQexp(A, 28) ;
+}
+
+long _IQ29exp(long A)
+{
+	return __IQexp(A, 29) ;
+}
+
+long _IQ30exp(long A)
+{
+	return __IQexp(A, 30) ;
+}
+
