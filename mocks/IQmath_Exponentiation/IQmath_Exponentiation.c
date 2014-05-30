@@ -48,3 +48,23 @@ long _IQ6exp(long A)
 	return __IQexp(A, 6) ;
 }
 
+long _IQ7exp(long A)
+{
+	return __IQexp(A, 7) ;
+}
+
+long _IQ8exp(long A)
+{
+	return __IQexp(A, 8) ;
+}
+
+long _IQ9exp(long A)
+{
+	return __IQexp(A, 9) ;
+}
+
+long _IQ10exp(long A)
+{
+	return __IQexp(A, 10) ;
+}
+

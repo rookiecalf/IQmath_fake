@@ -77,3 +77,27 @@ TEST(IQmath_Exponentiation, IQ6exp)
 	LONGS_EQUAL(_IQ6(6.25), _IQ6exp(_IQ6(-2.5))) ;
 }
 
+TEST(IQmath_Exponentiation, IQ7exp)
+{
+    LONGS_EQUAL(_IQ7(2.25), _IQ7exp(_IQ7(1.5))) ;
+	LONGS_EQUAL(_IQ7(6.25), _IQ7exp(_IQ7(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ8exp)
+{
+    LONGS_EQUAL(_IQ8(2.25), _IQ8exp(_IQ8(1.5))) ;
+	LONGS_EQUAL(_IQ8(6.25), _IQ8exp(_IQ8(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ9exp)
+{
+    LONGS_EQUAL(_IQ9(2.25), _IQ9exp(_IQ9(1.5))) ;
+	LONGS_EQUAL(_IQ9(6.25), _IQ9exp(_IQ9(-2.5))) ;
+}
+
+TEST(IQmath_Exponentiation, IQ10exp)
+{
+    LONGS_EQUAL(_IQ10(2.25), _IQ10exp(_IQ10(1.5))) ;
+	LONGS_EQUAL(_IQ10(6.25), _IQ10exp(_IQ10(-2.5))) ;
+}
+
