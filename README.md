@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/rookiecalf/IQmath_fake.png)
+[![Build Status](https://travis-ci.org/rookiecalf/IQmath_fake.png)](https://travis-ci.org/rookiecalf/IQmath_fake/builds)
 
 IQmath_fake
 ===========
