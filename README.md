@@ -20,3 +20,8 @@ _IQNcos的实现算法：cos(A/(2^N))*(2^N)，运算中使用double型数据。
 _IQNint的算法：A/(2^N)，使用long型数据进行运算。
 
 _IQNfrac的算法：(A/(2^N))*(2^N)，使用long型数据运算，不可进行运算的化简，需要严格遵循运算步骤。
+
+
+测试图片显示：
+
+![显示效果](http://http://www.oschina.net/uploads/img/201009/29160611_3P3b.png)
