@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/rookiecalf/IQmath_fake.png)
+
 IQmath_fake
 ===========
 
@@ -22,6 +24,3 @@ _IQNint的算法：A/(2^N)，使用long型数据进行运算。
 _IQNfrac的算法：(A/(2^N))*(2^N)，使用long型数据运算，不可进行运算的化简，需要严格遵循运算步骤。
 
 
-测试图片显示：
-
-![Build Status](https://travis-ci.org/RT-Thread/rtthread-manual-doc.png?branch=master)
