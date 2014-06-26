@@ -24,4 +24,4 @@ _IQNfrac的算法：(A/(2^N))*(2^N)，使用long型数据运算，不可进行�
 
 测试图片显示：
 
-![显示效果](http://http://www.oschina.net/uploads/img/201009/29160611_3P3b.png)
+![Build Status](https://travis-ci.org/RT-Thread/rtthread-manual-doc.png?branch=master)
